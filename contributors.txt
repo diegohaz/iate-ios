@@ -1,0 +1,5 @@
+=== Contributors ===
+
+Diego Haz,
+Leandro Morgado,
+Henrique Linhares
