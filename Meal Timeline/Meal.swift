@@ -9,8 +9,6 @@
 import UIKit
 
 class Meal: NSObject {
-    var name:String?
-    var descript:String?
     var image:UIImage?
     var date:NSDate?
     var healthyValue:Float?
@@ -19,9 +17,7 @@ class Meal: NSObject {
 
  
     
-    init(pname :String, pdescript :String, pimage :UIImage, pdate :NSDate, phealthyValue :Float, plovelyValue:Float){
-        self.name = pname
-        self.descript = pdescript
+    init(pimage :UIImage, pdate :NSDate, phealthyValue :Float, plovelyValue:Float){
         self.image = pimage
         self.date = pdate
         self.healthyValue = phealthyValue
