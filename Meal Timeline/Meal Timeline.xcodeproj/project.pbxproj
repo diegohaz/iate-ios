@@ -15,6 +15,8 @@
 		B0EECD321B5E7B2B00712A84 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EECD311B5E7B2B00712A84 /* HomeViewController.swift */; };
 		B0EECD361B5E7E6800712A84 /* TakePictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EECD351B5E7E6800712A84 /* TakePictureViewController.swift */; };
 		B0EECD3A1B5E851800712A84 /* RateImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EECD391B5E851800712A84 /* RateImageViewController.swift */; };
+		B0EECD3F1B5E9A2C00712A84 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EECD3E1B5E9A2C00712A84 /* Meal.swift */; };
+		B0EECD411B5EA26200712A84 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EECD401B5EA26200712A84 /* AppData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,8 @@
 		B0EECD311B5E7B2B00712A84 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B0EECD351B5E7E6800712A84 /* TakePictureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TakePictureViewController.swift; sourceTree = "<group>"; };
 		B0EECD391B5E851800712A84 /* RateImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateImageViewController.swift; sourceTree = "<group>"; };
+		B0EECD3E1B5E9A2C00712A84 /* Meal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
+		B0EECD401B5EA26200712A84 /* AppData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,10 +86,9 @@
 			isa = PBXGroup;
 			children = (
 				B0EECD111B5E758200712A84 /* AppDelegate.swift */,
-				B0EECD151B5E758200712A84 /* Main.storyboard */,
-				B0EECD391B5E851800712A84 /* RateImageViewController.swift */,
-				B0EECD311B5E7B2B00712A84 /* HomeViewController.swift */,
-				B0EECD351B5E7E6800712A84 /* TakePictureViewController.swift */,
+				B0EECD3D1B5E99F000712A84 /* Controller */,
+				B0EECD3C1B5E99E700712A84 /* View */,
+				B0EECD3B1B5E99DE00712A84 /* Model */,
 				B0EECD181B5E758200712A84 /* Images.xcassets */,
 				B0EECD1A1B5E758200712A84 /* LaunchScreen.xib */,
 				B0EECD0F1B5E758200712A84 /* Supporting Files */,
@@ -116,6 +119,33 @@
 				B0EECD261B5E758200712A84 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B0EECD3B1B5E99DE00712A84 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B0EECD3E1B5E9A2C00712A84 /* Meal.swift */,
+				B0EECD401B5EA26200712A84 /* AppData.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		B0EECD3C1B5E99E700712A84 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B0EECD151B5E758200712A84 /* Main.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		B0EECD3D1B5E99F000712A84 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B0EECD311B5E7B2B00712A84 /* HomeViewController.swift */,
+				B0EECD351B5E7E6800712A84 /* TakePictureViewController.swift */,
+				B0EECD391B5E851800712A84 /* RateImageViewController.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,10 +248,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0EECD3F1B5E9A2C00712A84 /* Meal.swift in Sources */,
 				B0EECD361B5E7E6800712A84 /* TakePictureViewController.swift in Sources */,
 				B0EECD121B5E758200712A84 /* AppDelegate.swift in Sources */,
 				B0EECD3A1B5E851800712A84 /* RateImageViewController.swift in Sources */,
 				B0EECD321B5E7B2B00712A84 /* HomeViewController.swift in Sources */,
+				B0EECD411B5EA26200712A84 /* AppData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,6 +385,7 @@
 				INFOPLIST_FILE = "Meal Timeline/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -363,6 +396,7 @@
 				INFOPLIST_FILE = "Meal Timeline/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

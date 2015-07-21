@@ -10,12 +10,16 @@ import UIKit
 
 class RateImageViewController: UIViewController {
 
+    @IBOutlet weak var scrollView: UIScrollView!
     var image:UIImage?
     
     @IBOutlet weak var healthySlider: UISlider!
     
     @IBOutlet weak var lovelySlider: UISlider!
 
+    @IBOutlet weak var nameTextView: UITextView!
+    
+    @IBOutlet weak var descriptionTextView: UITextView!
     
 
     @IBOutlet weak var imageView: UIImageView!
@@ -25,6 +29,10 @@ class RateImageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.imageView.image = self.image
+        self.scrollView.contentSize = CGSize(width: 270, height: 750)
+        scrollView.keyboardDismissMode = .OnDrag
+        var tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
+        view.addGestureRecognizer(tap)
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,9 +41,31 @@ class RateImageViewController: UIViewController {
     }
     
     @IBAction func doneButtonAct(sender: UIButton) {
+        
+        var mealInstance:Meal
+        mealInstance = Meal()
+        mealInstance.name = self.nameTextView.text
+        mealInstance.descript = self.descriptionTextView.text
+        mealInstance.image = self.image!
+        mealInstance.healthyValue = self.healthySlider.value
+        mealInstance.lovelyValue = self.lovelySlider.value
+        
+        
+    
+        
+        // SAVE INFO !
+        
         self.navigationController?.popToRootViewControllerAnimated(true)
     }
 
+    //Calls this function when the tap is recognized.
+    func DismissKeyboard(){
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
+
+    
+    
     /*
     // MARK: - Navigation
 
