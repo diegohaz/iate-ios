@@ -34,12 +34,20 @@ class RateImageViewController: UIViewController {
     
     @IBAction func doneButtonAct(sender: UIButton) {
         
+        var data:[Meal] = AppData.sharedInstance.getData()
+        
         var mealInstance:Meal
         mealInstance = Meal()
         mealInstance.image = self.image!
         mealInstance.healthyValue = self.healthySlider.value
         mealInstance.lovelyValue = self.lovelySlider.value
         
+       data.append(mealInstance)
+        
+        println("data size: ")
+        println(data.count)
+        
+        AppData.sharedInstance.setData(data)
         
     
         

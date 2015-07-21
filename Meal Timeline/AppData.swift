@@ -7,5 +7,14 @@
 //
 
 class AppData {
+    static let sharedInstance = AppData()
+    var data = [Meal]()
 
+    func getData()->[Meal]{
+    return data
+    }
+    
+    func setData(var pdata:[Meal]){
+    self.data = pdata
+    }
 }
