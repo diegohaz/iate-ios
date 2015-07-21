@@ -17,6 +17,9 @@
 		B0EECD3A1B5E851800712A84 /* RateImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EECD391B5E851800712A84 /* RateImageViewController.swift */; };
 		B0EECD3F1B5E9A2C00712A84 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EECD3E1B5E9A2C00712A84 /* Meal.swift */; };
 		B0EECD411B5EA26200712A84 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EECD401B5EA26200712A84 /* AppData.swift */; };
+		B0EECD451B5EBCC100712A84 /* MyCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EECD441B5EBCC100712A84 /* MyCollectionViewController.swift */; };
+		B0EECD481B5EBDB400712A84 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EECD461B5EBDB400712A84 /* CustomCollectionViewCell.swift */; };
+		B0EECD491B5EBDB400712A84 /* CustomCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0EECD471B5EBDB400712A84 /* CustomCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,9 @@
 		B0EECD391B5E851800712A84 /* RateImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateImageViewController.swift; sourceTree = "<group>"; };
 		B0EECD3E1B5E9A2C00712A84 /* Meal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
 		B0EECD401B5EA26200712A84 /* AppData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
+		B0EECD441B5EBCC100712A84 /* MyCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyCollectionViewController.swift; path = ../MyCollectionViewController.swift; sourceTree = "<group>"; };
+		B0EECD461B5EBDB400712A84 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
+		B0EECD471B5EBDB400712A84 /* CustomCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +140,8 @@
 			isa = PBXGroup;
 			children = (
 				B0EECD151B5E758200712A84 /* Main.storyboard */,
+				B0EECD461B5EBDB400712A84 /* CustomCollectionViewCell.swift */,
+				B0EECD471B5EBDB400712A84 /* CustomCollectionViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -144,6 +152,7 @@
 				B0EECD311B5E7B2B00712A84 /* HomeViewController.swift */,
 				B0EECD351B5E7E6800712A84 /* TakePictureViewController.swift */,
 				B0EECD391B5E851800712A84 /* RateImageViewController.swift */,
+				B0EECD441B5EBCC100712A84 /* MyCollectionViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -231,6 +240,7 @@
 				B0EECD171B5E758200712A84 /* Main.storyboard in Resources */,
 				B0EECD1C1B5E758200712A84 /* LaunchScreen.xib in Resources */,
 				B0EECD191B5E758200712A84 /* Images.xcassets in Resources */,
+				B0EECD491B5EBDB400712A84 /* CustomCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,6 +260,8 @@
 			files = (
 				B0EECD3F1B5E9A2C00712A84 /* Meal.swift in Sources */,
 				B0EECD361B5E7E6800712A84 /* TakePictureViewController.swift in Sources */,
+				B0EECD451B5EBCC100712A84 /* MyCollectionViewController.swift in Sources */,
+				B0EECD481B5EBDB400712A84 /* CustomCollectionViewCell.swift in Sources */,
 				B0EECD121B5E758200712A84 /* AppDelegate.swift in Sources */,
 				B0EECD3A1B5E851800712A84 /* RateImageViewController.swift in Sources */,
 				B0EECD321B5E7B2B00712A84 /* HomeViewController.swift in Sources */,
@@ -453,6 +465,7 @@
 				B0EECD2D1B5E758200712A84 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B0EECD2E1B5E758200712A84 /* Build configuration list for PBXNativeTarget "Meal TimelineTests" */ = {
 			isa = XCConfigurationList;
@@ -461,6 +474,7 @@
 				B0EECD301B5E758200712A84 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
