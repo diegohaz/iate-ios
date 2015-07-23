@@ -52,8 +52,8 @@ class RateImageViewController: UIViewController {
     
         
         // SAVE INFO !
-        
-        self.navigationController?.popToRootViewControllerAnimated(true)
+        self.performSegueWithIdentifier("backToIndex", sender: self)
+        //self.navigationController?.popToRootViewControllerAnimated(true)
     }
 
     //Calls this function when the tap is recognized.

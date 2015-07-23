@@ -71,7 +71,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="01r-Fi-wuf">
-                                <rect key="frame" x="522" y="30" width="47" height="40"/>
+                                <rect key="frame" x="527" y="30" width="47" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="47" id="PUh-AH-O88"/>
                                     <constraint firstAttribute="height" constant="40" id="S2U-Fh-OcU"/>
@@ -85,17 +85,20 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="01r-Fi-wuf" firstAttribute="top" secondItem="YSc-zc-JCT" secondAttribute="bottom" constant="10" id="0hv-HA-EUv"/>
                             <constraint firstAttribute="centerX" secondItem="nud-hf-V1I" secondAttribute="centerX" id="IbM-Dj-47H"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="01r-Fi-wuf" secondAttribute="trailing" constant="15" id="Q0Z-fp-HII"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="01r-Fi-wuf" secondAttribute="trailing" constant="10" id="Q0Z-fp-HII"/>
                             <constraint firstItem="IbY-Df-z0U" firstAttribute="top" secondItem="nud-hf-V1I" secondAttribute="bottom" constant="97" id="ZXp-3Z-Ft9"/>
                             <constraint firstAttribute="centerX" secondItem="IbY-Df-z0U" secondAttribute="centerX" id="yHW-xm-bM0"/>
                             <constraint firstItem="nud-hf-V1I" firstAttribute="top" secondItem="YSc-zc-JCT" secondAttribute="bottom" constant="16" id="ziU-6C-X9x"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="xHO-gt-nn5"/>
+                    <connections>
+                        <segue destination="U8B-4S-EE2" kind="presentation" identifier="goRate" id="Tr1-cC-Qse"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9FR-jg-KFY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -220,7 +223,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8wt-p7-40S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1122" y="1641"/>
+            <point key="canvasLocation" x="2568" y="937"/>
         </scene>
         <!--Take Picture View Controller-->
         <scene sceneID="HP3-7b-N0U">
@@ -269,9 +272,6 @@
                             <constraint firstItem="nBo-N5-8A6" firstAttribute="top" secondItem="OlZ-M8-FyR" secondAttribute="bottom" constant="58" id="tOX-0k-uLr"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <segue destination="U8B-4S-EE2" kind="show" identifier="SegueToRateImage" id="IkB-ln-QaM"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ipb-sf-6Vv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -344,6 +344,7 @@
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="xYc-iQ-rU2">
                                 <rect key="frame" x="0.0" y="-15" width="118" height="31"/>
+                                <color key="tintColor" red="0.0" green="0.66274509803921566" blue="0.61568627450980395" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" priority="750" constant="275" id="EV4-L6-hfg"/>
                                 </constraints>
@@ -382,6 +383,7 @@
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="PfN-ga-sr9">
                                 <rect key="frame" x="0.0" y="-15" width="118" height="31"/>
+                                <color key="tintColor" red="0.83137254901960778" green="0.078431372549019607" blue="0.3529411764705882" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="27r-2u-5iz"/>
                                 </constraints>
@@ -423,7 +425,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="xYc-iQ-rU2" firstAttribute="leading" secondItem="bkg-Xg-xXo" secondAttribute="trailing" constant="20" id="8TU-Ri-2Nq"/>
                             <constraint firstItem="bkg-Xg-xXo" firstAttribute="top" secondItem="8Bb-BU-Z0D" secondAttribute="bottom" constant="18" id="BMl-Wt-A1g"/>
@@ -497,11 +499,12 @@
                         <outlet property="healthySlider" destination="xYc-iQ-rU2" id="cIi-Ly-Rqm"/>
                         <outlet property="imageView" destination="8Bb-BU-Z0D" id="ePR-Y7-GDg"/>
                         <outlet property="lovelySlider" destination="PfN-ga-sr9" id="fYk-Xv-ENe"/>
+                        <segue destination="AJB-mj-p3P" kind="presentation" identifier="backToIndex" id="IS6-Q0-EGC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G8m-tG-C9R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2518.5" y="957"/>
+            <point key="canvasLocation" x="1081" y="1641"/>
         </scene>
     </scenes>
     <resources>
