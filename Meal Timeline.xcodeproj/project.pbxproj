@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		37582DE21B61700D00D41298 /* DayCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37582DE11B61700D00D41298 /* DayCircleView.swift */; };
 		B0EECD121B5E758200712A84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EECD111B5E758200712A84 /* AppDelegate.swift */; };
 		B0EECD171B5E758200712A84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0EECD151B5E758200712A84 /* Main.storyboard */; };
 		B0EECD191B5E758200712A84 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0EECD181B5E758200712A84 /* Images.xcassets */; };
@@ -33,6 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		37582DE11B61700D00D41298 /* DayCircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayCircleView.swift; sourceTree = "<group>"; };
 		B0EECD0C1B5E758200712A84 /* Meal Timeline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Meal Timeline.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0EECD101B5E758200712A84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0EECD111B5E758200712A84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				B0EECD151B5E758200712A84 /* Main.storyboard */,
+				37582DE11B61700D00D41298 /* DayCircleView.swift */,
 				B0EECD461B5EBDB400712A84 /* CustomCollectionViewCell.swift */,
 				B0EECD471B5EBDB400712A84 /* CustomCollectionViewCell.xib */,
 			);
@@ -265,6 +268,7 @@
 				B0EECD121B5E758200712A84 /* AppDelegate.swift in Sources */,
 				B0EECD3A1B5E851800712A84 /* RateImageViewController.swift in Sources */,
 				B0EECD321B5E7B2B00712A84 /* HomeViewController.swift in Sources */,
+				37582DE21B61700D00D41298 /* DayCircleView.swift in Sources */,
 				B0EECD411B5EA26200712A84 /* AppData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
