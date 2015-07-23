@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		37582DE21B61700D00D41298 /* DayCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37582DE11B61700D00D41298 /* DayCircleView.swift */; };
+		B0C1F3431B618E1500130714 /* IndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C1F3421B618E1400130714 /* IndexViewController.swift */; };
 		B0EECD121B5E758200712A84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EECD111B5E758200712A84 /* AppDelegate.swift */; };
 		B0EECD171B5E758200712A84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0EECD151B5E758200712A84 /* Main.storyboard */; };
 		B0EECD191B5E758200712A84 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0EECD181B5E758200712A84 /* Images.xcassets */; };
@@ -35,6 +36,7 @@
 
 /* Begin PBXFileReference section */
 		37582DE11B61700D00D41298 /* DayCircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayCircleView.swift; sourceTree = "<group>"; };
+		B0C1F3421B618E1400130714 /* IndexViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexViewController.swift; sourceTree = "<group>"; };
 		B0EECD0C1B5E758200712A84 /* Meal Timeline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Meal Timeline.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0EECD101B5E758200712A84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0EECD111B5E758200712A84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				B0EECD351B5E7E6800712A84 /* TakePictureViewController.swift */,
 				B0EECD391B5E851800712A84 /* RateImageViewController.swift */,
 				B0EECD441B5EBCC100712A84 /* MyCollectionViewController.swift */,
+				B0C1F3421B618E1400130714 /* IndexViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 				B0EECD321B5E7B2B00712A84 /* HomeViewController.swift in Sources */,
 				37582DE21B61700D00D41298 /* DayCircleView.swift in Sources */,
 				B0EECD411B5EA26200712A84 /* AppData.swift in Sources */,
+				B0C1F3431B618E1500130714 /* IndexViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
