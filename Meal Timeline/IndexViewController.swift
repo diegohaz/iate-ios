@@ -112,6 +112,7 @@ class IndexViewController: UIViewController, UIActionSheetDelegate, UIImagePicke
                 UIImageWriteToSavedPhotosAlbum(image, self,
                     "image:didFinishSavingWithError:contextInfo:", nil)
                 self.imageDate = NSDate() // pega a data atual
+                self.performSegue()
                 
             } else {
                 //se pegou a foto do camera roll
@@ -125,6 +126,8 @@ class IndexViewController: UIViewController, UIActionSheetDelegate, UIImagePicke
                     if asset.valueForProperty(ALAssetPropertyDate) != nil {
                         let imagecRollDate = (asset.valueForProperty(ALAssetPropertyDate) as! NSDate!)
                         self.imageDate = imagecRollDate
+                        println("alalalalalal")
+                        self.performSegue()
                     }
                     },
                     failureBlock: { (error: NSError!) in
@@ -132,12 +135,21 @@ class IndexViewController: UIViewController, UIActionSheetDelegate, UIImagePicke
                 })
                 // Termina a parte que recupera a NSDate da imagem selecionada da camera roll
                 
+                
+                
+                println("passou pela recuperação da NSDate da imagem / roll")
             }
         }
         
-        self.performSegueWithIdentifier("goRate", sender: self)
+        println("Date: \(self.imageDate)")
+        
     }
 
+
+    
+    func performSegue(){
+        self.performSegueWithIdentifier("goRate", sender: self)
+    }
     
     func image(image: UIImage, didFinishSavingWithError error: NSErrorPointer, contextInfo:UnsafePointer<Void>) {
         
@@ -196,6 +208,13 @@ class IndexViewController: UIViewController, UIActionSheetDelegate, UIImagePicke
         if collectionView.tag == 0 {
             cell = collectionView.dequeueReusableCellWithReuseIdentifier("MealCell", forIndexPath: indexPath) as! MealCollectionViewCell
             let meal = todayMeals[indexPath.row]
+
+            var mycell = collectionView.dequeueReusableCellWithReuseIdentifier("MealCell", forIndexPath: indexPath) as! MealCollectionViewCell//GAMBI !!!!
+            
+            mycell.imageView.image = todayMeals[indexPath.row].image
+            
+            return mycell
+            
         } else if collectionView.tag == 1 {
             cell = collectionView.dequeueReusableCellWithReuseIdentifier("DayCell", forIndexPath: indexPath) as! UICollectionViewCell
         } else {
