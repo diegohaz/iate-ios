@@ -15,8 +15,8 @@
                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h3X-P5-w8D" customClass="DayCircleView" customModule="Meal_Timeline" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hGm-9u-0au">
-                                <rect key="frame" x="5" y="5" width="60" height="60"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hGm-9u-0au">
+                                <rect key="frame" x="7" y="7" width="56" height="56"/>
                                 <color key="backgroundColor" red="0.12941176469999999" green="0.55294117649999996" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                         </subviews>

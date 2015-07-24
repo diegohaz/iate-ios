@@ -59,18 +59,18 @@
                                 </variation>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="01r-Fi-wuf">
-                                <rect key="frame" x="527" y="237" width="60" height="60"/>
+                                <rect key="frame" x="529" y="239" width="56" height="56"/>
                                 <color key="backgroundColor" red="0.0" green="0.66274509803921566" blue="0.61568627450980395" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="UpD-wY-P8s"/>
-                                    <constraint firstAttribute="width" constant="60" id="gNB-VR-Q5z"/>
+                                    <constraint firstAttribute="height" constant="56" id="UpD-wY-P8s"/>
+                                    <constraint firstAttribute="width" constant="56" id="gNB-VR-Q5z"/>
                                 </constraints>
                                 <state key="normal" image="plus">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="30"/>
+                                        <integer key="value" value="28"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
@@ -174,10 +174,10 @@
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="nud-hf-V1I" secondAttribute="centerX" id="IbM-Dj-47H"/>
                             <constraint firstItem="wGn-Ms-GfQ" firstAttribute="top" secondItem="01r-Fi-wuf" secondAttribute="top" constant="1" id="WG7-OB-ahU"/>
-                            <constraint firstItem="01r-Fi-wuf" firstAttribute="leading" secondItem="wGn-Ms-GfQ" secondAttribute="trailing" constant="13" id="YTM-kc-fpP"/>
+                            <constraint firstItem="01r-Fi-wuf" firstAttribute="leading" secondItem="wGn-Ms-GfQ" secondAttribute="trailing" constant="15" id="YTM-kc-fpP"/>
                             <constraint firstAttribute="trailing" secondItem="qKo-XW-0G4" secondAttribute="trailing" id="ZM2-yB-8Yr"/>
                             <constraint firstItem="qKo-XW-0G4" firstAttribute="leading" secondItem="b1g-RO-9Fn" secondAttribute="leading" id="bBW-4v-rIn"/>
-                            <constraint firstAttribute="trailing" secondItem="01r-Fi-wuf" secondAttribute="trailing" constant="13" id="jRU-GN-Lit"/>
+                            <constraint firstAttribute="trailing" secondItem="01r-Fi-wuf" secondAttribute="trailing" constant="15" id="jRU-GN-Lit"/>
                             <constraint firstAttribute="bottom" secondItem="qKo-XW-0G4" secondAttribute="bottom" id="lxp-hQ-4gs"/>
                             <constraint firstItem="wGn-Ms-GfQ" firstAttribute="top" secondItem="nud-hf-V1I" secondAttribute="bottom" constant="16" id="p6m-ri-Qcx"/>
                             <constraint firstItem="wGn-Ms-GfQ" firstAttribute="centerY" secondItem="01r-Fi-wuf" secondAttribute="centerY" constant="10" id="r6z-wW-wi4"/>
