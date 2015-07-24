@@ -15,8 +15,8 @@ class DayCircleView: UIView {
 
     override func drawRect(rect: CGRect) {
         let stroke: CGFloat = bounds.width/28
-        let width = bounds.width - stroke * 2
-        let height = bounds.height - stroke * 2
+        let width = bounds.width - stroke
+        let height = bounds.height - stroke
         var path = UIBezierPath(roundedRect: CGRectMake(stroke/2, stroke/2, width, height), byRoundingCorners: UIRectCorner.AllCorners, cornerRadii: CGSize(width: width/2, height: height/2))
         
         UIColor(white: 0, alpha: 0.2).setStroke()

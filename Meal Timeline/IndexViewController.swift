@@ -9,11 +9,27 @@
 import UIKit
 import MobileCoreServices
 
-class IndexViewController: UIViewController, UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class IndexViewController: UIViewController, UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
 
     var image:UIImage?
     var newMedia:Bool?
     
+    var todayMeals = [Meal]()
+    
+    @IBOutlet weak var todayCollectionView: UICollectionView!
+
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        todayCollectionView.registerNib(UINib(nibName: "MealCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MealCell")
+        
+        todayMeals.append(Meal(pimage: UIImage(), pdate: NSDate(), phealthyValue: 0.3, plovelyValue: 0.5))
+        todayMeals.append(Meal(pimage: UIImage(), pdate: NSDate(), phealthyValue: 0.74, plovelyValue: 0.5))
+        todayMeals.append(Meal(pimage: UIImage(), pdate: NSDate(), phealthyValue: 0.3, plovelyValue: 0.5))
+        todayMeals.append(Meal(pimage: UIImage(), pdate: NSDate(), phealthyValue: 0.3, plovelyValue: 0.5))
+        todayCollectionView.reloadData()
+    }
     
     
     @IBAction func plusButtonAct(sender: AnyObject) {
@@ -31,17 +47,6 @@ class IndexViewController: UIViewController, UIActionSheetDelegate, UIImagePicke
         }
         
         
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 
@@ -125,6 +130,24 @@ class IndexViewController: UIViewController, UIActionSheetDelegate, UIImagePicke
             svc.image = self.image
         }
         
+    }
+    
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return todayMeals.count
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("MealCell", forIndexPath: indexPath) as! MealCollectionViewCell
+        let meal = todayMeals[indexPath.row]
+        
+        // Configure the cell
+        dump(cell)
+        
+        return cell
     }
 
 }
