@@ -16,10 +16,12 @@ class IndexViewController: UIViewController, UIActionSheetDelegate, UIImagePicke
     var imageDate:NSDate?
     var newMedia:Bool?
     
+    @IBOutlet weak var todayCircleHeight: NSLayoutConstraint!
     var todayMeals = [Meal]()
+    var pastMeals = [[Meal]]()
     
     @IBOutlet weak var todayCollectionView: UICollectionView!
-
+    @IBOutlet weak var pastCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +33,11 @@ class IndexViewController: UIViewController, UIActionSheetDelegate, UIImagePicke
         todayMeals.append(Meal(pimage: UIImage(), pdate: NSDate(), phealthyValue: 0.3, plovelyValue: 0.5))
         todayMeals.append(Meal(pimage: UIImage(), pdate: NSDate(), phealthyValue: 0.3, plovelyValue: 0.5))
         todayCollectionView.reloadData()
+        
+        pastMeals.append([Meal(pimage: UIImage(), pdate: NSDate(), phealthyValue: 0.3, plovelyValue: 0.5)])
+        pastMeals.append([Meal(pimage: UIImage(), pdate: NSDate(), phealthyValue: 0.3, plovelyValue: 0.5)])
+        pastMeals.append([Meal(pimage: UIImage(), pdate: NSDate(), phealthyValue: 0.3, plovelyValue: 0.5)])
+        pastCollectionView.reloadData()
     }
     
     
@@ -159,6 +166,22 @@ class IndexViewController: UIViewController, UIActionSheetDelegate, UIImagePicke
         
     }
     
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        let offset = scrollView.contentOffset.y
+        
+        if offset != 0 && offset < scrollView.contentSize.height - scrollView.bounds.height {
+            let diff = 110 - offset * 1.5
+            
+            if diff > 0 && diff <= 110  {
+                todayCircleHeight.constant = 70 + diff
+            } else if diff <= 0 {
+                todayCircleHeight.constant = 70
+            } else {
+                todayCircleHeight.constant = 180
+            }
+        }
+    }
+    
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -168,11 +191,17 @@ class IndexViewController: UIViewController, UIActionSheetDelegate, UIImagePicke
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("MealCell", forIndexPath: indexPath) as! MealCollectionViewCell
-        let meal = todayMeals[indexPath.row]
+        var cell: UICollectionViewCell!
         
-        // Configure the cell
-        dump(cell)
+        if collectionView.tag == 0 {
+            cell = collectionView.dequeueReusableCellWithReuseIdentifier("MealCell", forIndexPath: indexPath) as! MealCollectionViewCell
+            let meal = todayMeals[indexPath.row]
+        } else if collectionView.tag == 1 {
+            cell = collectionView.dequeueReusableCellWithReuseIdentifier("DayCell", forIndexPath: indexPath) as! UICollectionViewCell
+        } else {
+            collectionView.registerNib(UINib(nibName: "MealCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MealCell")
+            cell = collectionView.dequeueReusableCellWithReuseIdentifier("MealCell", forIndexPath: indexPath) as! MealCollectionViewCell
+        }
         
         return cell
     }
