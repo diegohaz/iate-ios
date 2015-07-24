@@ -28,16 +28,22 @@ class IndexViewController: UIViewController, UIActionSheetDelegate, UIImagePicke
         
         todayCollectionView.registerNib(UINib(nibName: "MealCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MealCell")
         
-        todayMeals.append(Meal(pimage: UIImage(), pdate: NSDate(), phealthyValue: 0.3, plovelyValue: 0.5))
+        /*todayMeals.append(Meal(pimage: UIImage(), pdate: NSDate(), phealthyValue: 0.3, plovelyValue: 0.5))
         todayMeals.append(Meal(pimage: UIImage(), pdate: NSDate(), phealthyValue: 0.74, plovelyValue: 0.5))
         todayMeals.append(Meal(pimage: UIImage(), pdate: NSDate(), phealthyValue: 0.3, plovelyValue: 0.5))
-        todayMeals.append(Meal(pimage: UIImage(), pdate: NSDate(), phealthyValue: 0.3, plovelyValue: 0.5))
+        todayMeals.append(Meal(pimage: UIImage(), pdate: NSDate(), phealthyValue: 0.3, plovelyValue: 0.5))*/
+        todayMeals = AppData.sharedInstance.getData()
         todayCollectionView.reloadData()
         
         pastMeals.append([Meal(pimage: UIImage(), pdate: NSDate(), phealthyValue: 0.3, plovelyValue: 0.5)])
         pastMeals.append([Meal(pimage: UIImage(), pdate: NSDate(), phealthyValue: 0.3, plovelyValue: 0.5)])
         pastMeals.append([Meal(pimage: UIImage(), pdate: NSDate(), phealthyValue: 0.3, plovelyValue: 0.5)])
         pastCollectionView.reloadData()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        todayMeals = AppData.sharedInstance.getData()
+        todayCollectionView.reloadData()
     }
     
     
