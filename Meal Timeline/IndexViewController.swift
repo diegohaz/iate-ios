@@ -8,10 +8,12 @@
 
 import UIKit
 import MobileCoreServices
+import AssetsLibrary
 
 class IndexViewController: UIViewController, UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
 
     var image:UIImage?
+    var imageDate:NSDate?
     var newMedia:Bool?
     
     var todayMeals = [Meal]()
@@ -98,13 +100,37 @@ class IndexViewController: UIViewController, UIActionSheetDelegate, UIImagePicke
             
             self.image = image
             
-            if (newMedia == true) {
+            if (newMedia == true) { // se usou a camera para tirar a foto
+                
                 UIImageWriteToSavedPhotosAlbum(image, self,
                     "image:didFinishSavingWithError:contextInfo:", nil)
+                self.imageDate = NSDate() // pega a data atual
+                
+            } else {
+                //se pegou a foto do camera roll
+                
+                // Começa a parte que recupera a NSDate da imagem selecionada da camera roll
+                let library = ALAssetsLibrary()
+                var url: NSURL = info[UIImagePickerControllerReferenceURL] as! NSURL
+                
+                
+                library.assetForURL(url, resultBlock: { (asset: ALAsset!) in
+                    if asset.valueForProperty(ALAssetPropertyDate) != nil {
+                        let imagecRollDate = (asset.valueForProperty(ALAssetPropertyDate) as! NSDate!)
+                        self.imageDate = imagecRollDate
+                    }
+                    },
+                    failureBlock: { (error: NSError!) in
+                        println(error.localizedDescription)
+                })
+                // Termina a parte que recupera a NSDate da imagem selecionada da camera roll
+                
             }
         }
+        
         self.performSegueWithIdentifier("goRate", sender: self)
     }
+
     
     func image(image: UIImage, didFinishSavingWithError error: NSErrorPointer, contextInfo:UnsafePointer<Void>) {
         
@@ -127,6 +153,7 @@ class IndexViewController: UIViewController, UIActionSheetDelegate, UIImagePicke
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "goRate"){
             var svc = segue.destinationViewController as! RateImageViewController
+            svc.imageDate = self.imageDate
             svc.image = self.image
         }
         

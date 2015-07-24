@@ -13,6 +13,8 @@ class RateImageViewController: UIViewController {
  
     var image:UIImage?
     
+    var imageDate:NSDate?
+    
     @IBOutlet weak var healthySlider: UISlider!
     
     @IBOutlet weak var lovelySlider: UISlider!
@@ -39,10 +41,11 @@ class RateImageViewController: UIViewController {
         var mealInstance:Meal
         mealInstance = Meal()
         mealInstance.image = self.image!
+        mealInstance.date = self.imageDate
         mealInstance.healthyValue = self.healthySlider.value
         mealInstance.lovelyValue = self.lovelySlider.value
         
-       data.append(mealInstance)
+        data.append(mealInstance)
         
         println("data size: ")
         println(data.count)
@@ -52,6 +55,7 @@ class RateImageViewController: UIViewController {
     
         
         // SAVE INFO !
+        
         self.performSegueWithIdentifier("backToIndex", sender: self)
         //self.navigationController?.popToRootViewControllerAnimated(true)
     }

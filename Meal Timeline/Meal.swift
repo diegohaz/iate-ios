@@ -9,6 +9,7 @@
 import UIKit
 
 class Meal: NSObject {
+    
     var image:UIImage?
     var date:NSDate?
     var healthyValue:Float?
