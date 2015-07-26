@@ -11,17 +11,17 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Symbol" translatesAutoresizingMaskIntoConstraints="NO" id="ot0-X6-Bfe">
-                    <rect key="frame" x="90" y="36" width="300" height="180"/>
+                    <rect key="frame" x="145.5" y="36" width="189" height="180"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="180" id="bJh-sH-OMu"/>
-                        <constraint firstAttribute="width" constant="300" id="ogY-WQ-dyx"/>
+                        <constraint firstAttribute="width" constant="189" id="ogY-WQ-dyx"/>
                     </constraints>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="wNH-7E-9o9">
-                    <rect key="frame" x="120" y="232" width="240" height="50"/>
+                    <rect key="frame" x="150" y="232" width="180" height="71"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="240" id="Ncj-rS-xIl"/>
-                        <constraint firstAttribute="height" constant="50" id="xFS-md-IfR"/>
+                        <constraint firstAttribute="width" constant="180" id="Ncj-rS-xIl"/>
+                        <constraint firstAttribute="height" constant="71" id="xFS-md-IfR"/>
                     </constraints>
                 </imageView>
             </subviews>
@@ -39,7 +39,7 @@
         </view>
     </objects>
     <resources>
-        <image name="Logo" width="240" height="54"/>
-        <image name="Symbol" width="283" height="189"/>
+        <image name="Logo" width="189" height="71"/>
+        <image name="Symbol" width="189" height="189"/>
     </resources>
 </document>
