@@ -123,5 +123,83 @@ class MealDB {
         
     }
     
+/* Dado o mes e o ano, retorna vetor com os dias distintos das refeicoes.
+ * Retorna Array de inteiros - dias distintos das refeicoes cadastradas ate entao.
+ * Exemplo de uso em outras classes: "let daysMealArray = MealDB().getEveryMealDays(7, ano: 2015)"
+ */
+    func getEveryMealDays (mes: Int, ano: Int) -> Array<Int>
+    {
+        // Vetor com dias das refeicoes em um mes e ano especificos.
+        var array = [Int]()
+        
+        // Monitorando o Banco em busca das refeicoes desejadas
+        for(var i = 0; i < getMeals().count; i++) {
+            
+            // Converte NSDate para os valores inteiros "day, month e year".
+            let calendar = NSCalendar.currentCalendar()
+            let components = calendar.components(.CalendarUnitMonth | .CalendarUnitDay | .CalendarUnitYear, fromDate: getMeals()[i].timeStamp)
+            
+            let day = components.day
+            let month = components.month
+            let year = components.year
+            
+            // Construindo o vetor de dias das refeicoes cadastradas no Banco.
+            if( array.count == 0) {
+                
+                if (month == mes && year == ano) {
+                    
+                    array.append(day)
+                }
+                
+            } else {
+                
+                if (month == mes && year == ano && day != array[array.count - 1]) {
+                    
+                    array.append(day)
+                    
+                }
+            }
+            
+        } // Vetor dos dias das refeicoes pronto.
+        
+        return array
+        
+    }
+
+
+
+/* Busca refeicoes por data. 
+ * Retorna vetor de Meals em uma data específica (os parametros sao valores inteiros).
+ * Exemplo de uso em outras classes: "let refeicoes = MealDB().getMealsByDate(26, mes: 8, ano: 2015)"
+ */
+    func getMealsByDate(dia: Int, mes: Int, ano: Int) -> Array<Meal>
+    {
+        // Vetor com as refeicoes procuradas.
+        var array = [Meal]()
+        
+        // Monitorando o Banco em busca das refeicoes desejadas
+        for(var i = 0; i < getMeals().count; i++) {
+            
+            // Converte NSDate para os valores inteiros "day, month e year".
+            let calendar = NSCalendar.currentCalendar()
+            let components = calendar.components(.CalendarUnitMonth | .CalendarUnitDay | .CalendarUnitYear, fromDate: getMeals()[i].timeStamp)
+            
+            let day = components.day
+            let month = components.month
+            let year = components.year
+            
+            // Construindo o vetor de refeicoes procurado.
+            if (day == dia && month == mes && year == ano) {
+                
+                array.append(getMeals()[i])
+            }
+            
+        } // Vetor das refeicoes procuradas pronto.
+        
+        return array
+        
+    }
+    
+ 
 }
 
