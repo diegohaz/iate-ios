@@ -15,6 +15,7 @@ class IndexViewController: UIViewController, UIActionSheetDelegate, UIImagePicke
     var image:UIImage?
     var imageDate:NSDate?
     var newMedia:Bool?
+    var selectedMeal:Meal?
     
     @IBOutlet weak var todayCircleHeight: NSLayoutConstraint!
     var todayMeals = [Meal]()
@@ -34,9 +35,6 @@ class IndexViewController: UIViewController, UIActionSheetDelegate, UIImagePicke
         
         pastMeals = MealDB().getMeals()
         
-//        pastMeals.append([Meal(pimage: UIImage(), pdate: NSDate(), phealthyValue: 0.3, plovelyValue: 0.5)])
-//        pastMeals.append([Meal(pimage: UIImage(), pdate: NSDate(), phealthyValue: 0.3, plovelyValue: 0.5)])
-//        pastMeals.append([Meal(pimage: UIImage(), pdate: NSDate(), phealthyValue: 0.3, plovelyValue: 0.5)])
         pastCollectionView.reloadData()
     }
     
@@ -131,7 +129,6 @@ class IndexViewController: UIViewController, UIActionSheetDelegate, UIImagePicke
                     if asset.valueForProperty(ALAssetPropertyDate) != nil {
                         let imagecRollDate = (asset.valueForProperty(ALAssetPropertyDate) as! NSDate!)
                         self.imageDate = imagecRollDate
-                        println("alalalalalal")
                         self.performSegue()
                     }
                     },
@@ -179,6 +176,11 @@ class IndexViewController: UIViewController, UIActionSheetDelegate, UIImagePicke
             var svc = segue.destinationViewController as! RateImageViewController
             svc.imageDate = self.imageDate
             svc.image = self.image
+        }
+        
+        if (segue.identifier == "showMealDetails"){
+            var svc = segue.destinationViewController as! MealDetailsViewController
+            svc.meal = self.selectedMeal
         }
         
     }
@@ -230,5 +232,15 @@ class IndexViewController: UIViewController, UIActionSheetDelegate, UIImagePicke
         
         return cell
     }
+
+    //quando seleciona um item, vai para a tela de Details
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        if (collectionView.tag==0){
+            self.selectedMeal = todayMeals[indexPath.row]
+            self.performSegueWithIdentifier("showMealDetails", sender: self)
+        }
+    }
+
+    
 
 }

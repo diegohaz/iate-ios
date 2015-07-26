@@ -21,9 +21,8 @@
 		B0EECD171B5E758200712A84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0EECD151B5E758200712A84 /* Main.storyboard */; };
 		B0EECD1C1B5E758200712A84 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0EECD1A1B5E758200712A84 /* LaunchScreen.xib */; };
 		B0EECD281B5E758200712A84 /* Meal_TimelineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EECD271B5E758200712A84 /* Meal_TimelineTests.swift */; };
-		B0EECD321B5E7B2B00712A84 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EECD311B5E7B2B00712A84 /* HomeViewController.swift */; };
-		B0EECD361B5E7E6800712A84 /* TakePictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EECD351B5E7E6800712A84 /* TakePictureViewController.swift */; };
 		B0EECD3A1B5E851800712A84 /* RateImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EECD391B5E851800712A84 /* RateImageViewController.swift */; };
+		BE1FD10E1B6481060052533C /* MealDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1FD10D1B6481060052533C /* MealDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,9 +54,8 @@
 		B0EECD211B5E758200712A84 /* Meal TimelineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Meal TimelineTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0EECD261B5E758200712A84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0EECD271B5E758200712A84 /* Meal_TimelineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal_TimelineTests.swift; sourceTree = "<group>"; };
-		B0EECD311B5E7B2B00712A84 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		B0EECD351B5E7E6800712A84 /* TakePictureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TakePictureViewController.swift; sourceTree = "<group>"; };
 		B0EECD391B5E851800712A84 /* RateImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateImageViewController.swift; sourceTree = "<group>"; };
+		BE1FD10D1B6481060052533C /* MealDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,10 +160,9 @@
 		B0EECD3D1B5E99F000712A84 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				B0EECD311B5E7B2B00712A84 /* HomeViewController.swift */,
-				B0EECD351B5E7E6800712A84 /* TakePictureViewController.swift */,
-				B0EECD391B5E851800712A84 /* RateImageViewController.swift */,
 				B0C1F3421B618E1400130714 /* IndexViewController.swift */,
+				B0EECD391B5E851800712A84 /* RateImageViewController.swift */,
+				BE1FD10D1B6481060052533C /* MealDetailsViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -219,7 +216,7 @@
 				TargetAttributes = {
 					B0EECD0B1B5E758200712A84 = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = 427LPJP8S9;
+						DevelopmentTeam = 9M8RSS5KWQ;
 					};
 					B0EECD201B5E758200712A84 = {
 						CreatedOnToolsVersion = 6.4;
@@ -274,14 +271,13 @@
 			files = (
 				0F9616E21B645D6C00129783 /* Meal.swift in Sources */,
 				37582DE51B6269F500D41298 /* MealCollectionViewCell.swift in Sources */,
-				B0EECD361B5E7E6800712A84 /* TakePictureViewController.swift in Sources */,
 				B0EECD121B5E758200712A84 /* AppDelegate.swift in Sources */,
 				0F9616E41B64603E00129783 /* MealDB.swift in Sources */,
 				B0EECD3A1B5E851800712A84 /* RateImageViewController.swift in Sources */,
-				B0EECD321B5E7B2B00712A84 /* HomeViewController.swift in Sources */,
 				0F9616E01B645BF400129783 /* MealModel.xcdatamodeld in Sources */,
 				37582DE21B61700D00D41298 /* DayCircleView.swift in Sources */,
 				B0C1F3431B618E1500130714 /* IndexViewController.swift in Sources */,
+				BE1FD10E1B6481060052533C /* MealDetailsViewController.swift in Sources */,
 				0F9616E81B6467A300129783 /* ImageTransformer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
