@@ -132,29 +132,40 @@ class MealDB {
  */
     func getEveryMealDates () -> Array<NSDateComponents>
     {
-        // Vetor com as datas procuradas
-        var array = [NSDateComponents]()
         
-        // Monitorando o Banco em busca das datas procuradas
-        for(var i = 0; i < getMeals().count; i++) {
+        var array = [NSDateComponents]()
+        var meals = [Meal]()
+        
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let context = appDelegate.managedObjectContext!
+        let entity = NSEntityDescription.entityForName("Meal", inManagedObjectContext: context)
+        
+        
+        var fetchRequest = NSFetchRequest()
+        fetchRequest.entity = entity
+        
+        meals = context.executeFetchRequest(fetchRequest, error: nil) as! [Meal]
+        
+        
+        for meal in meals {
             
-            // Converte NSDate para os valores inteiros "day, month e year".
             let calendar = NSCalendar.currentCalendar()
-            let components = calendar.components(.CalendarUnitMonth | .CalendarUnitDay | .CalendarUnitYear, fromDate: getMeals()[i].timeStamp)
+            let components = calendar.components(.CalendarUnitMonth | .CalendarUnitDay | .CalendarUnitYear, fromDate: meal.timeStamp)
             
             let day = components.day
             let month = components.month
             let year = components.year
             
-            // Inicio da construcao do vetor de datas
             if( array.count == 0) {
                 
-                  var dateFound = NSDateComponents()
-                    dateFound.day = day
-                    dateFound.month = month
-                    dateFound.year  = year
-                    
-                    array.append(dateFound)
+                var dateFound = NSDateComponents()
+                dateFound.day = day
+                dateFound.month = month
+                dateFound.year  = year
+                
+                array.append(dateFound)
+                
                 
             } else {
                 
@@ -166,14 +177,16 @@ class MealDB {
                     dateFound.year  = year
                     
                     array.append(dateFound)
+                    
                 }
             }
             
             if (array.count > 30) { break }
             
-        } // Fim da construcao do vetor de datas com ate 30 elementos (datas) distintas.
+        }
         
         return array
+      
     }
     
 
@@ -197,12 +210,26 @@ class MealDB {
         // Vetor com as refeicoes procuradas.
         var array = [Meal]()
         
+        var meals = [Meal]()
+        
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let context = appDelegate.managedObjectContext!
+        let entity = NSEntityDescription.entityForName("Meal", inManagedObjectContext: context)
+        
+        
+        var fetchRequest = NSFetchRequest()
+        fetchRequest.entity = entity
+        
+        meals = context.executeFetchRequest(fetchRequest, error: nil) as! [Meal]
+        
+        
         // Monitorando o Banco em busca das refeicoes.
-        for(var i = 0; i < getMeals().count; i++) {
+        for meal in meals {
             
             // Converte NSDate para os valores inteiros "day, month e year".
             let calendar = NSCalendar.currentCalendar()
-            let components = calendar.components(.CalendarUnitMonth | .CalendarUnitDay | .CalendarUnitYear, fromDate: getMeals()[i].timeStamp)
+            let components = calendar.components(.CalendarUnitMonth | .CalendarUnitDay | .CalendarUnitYear, fromDate: meal.timeStamp)
             
             let day = components.day
             let month = components.month
@@ -211,7 +238,7 @@ class MealDB {
             // Inicio da construcao do vetor de refeicoes.
             if (day == data.day && month == data.month && year == data.year) {
                 
-                array.append(getMeals()[i])
+                array.append(meal)
                 
             }
             
