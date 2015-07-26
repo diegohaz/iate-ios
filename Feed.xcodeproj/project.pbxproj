@@ -21,9 +21,8 @@
 		B0EECD171B5E758200712A84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0EECD151B5E758200712A84 /* Main.storyboard */; };
 		B0EECD1C1B5E758200712A84 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0EECD1A1B5E758200712A84 /* LaunchScreen.xib */; };
 		B0EECD281B5E758200712A84 /* Meal_TimelineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EECD271B5E758200712A84 /* Meal_TimelineTests.swift */; };
-		B0EECD321B5E7B2B00712A84 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EECD311B5E7B2B00712A84 /* HomeViewController.swift */; };
-		B0EECD361B5E7E6800712A84 /* TakePictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EECD351B5E7E6800712A84 /* TakePictureViewController.swift */; };
 		B0EECD3A1B5E851800712A84 /* RateImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EECD391B5E851800712A84 /* RateImageViewController.swift */; };
+		BE1FD10E1B6481060052533C /* MealDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1FD10D1B6481060052533C /* MealDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,17 +46,16 @@
 		37582DE41B6269F500D41298 /* MealCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MealCollectionViewCell.xib; sourceTree = "<group>"; };
 		37582DEB1B62826C00D41298 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B0C1F3421B618E1400130714 /* IndexViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexViewController.swift; sourceTree = "<group>"; };
-		B0EECD0C1B5E758200712A84 /* Meal Timeline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Meal Timeline.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0EECD0C1B5E758200712A84 /* Feed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Feed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0EECD101B5E758200712A84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0EECD111B5E758200712A84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0EECD161B5E758200712A84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B0EECD1B1B5E758200712A84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		B0EECD211B5E758200712A84 /* Meal TimelineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Meal TimelineTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0EECD211B5E758200712A84 /* FeedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FeedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0EECD261B5E758200712A84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0EECD271B5E758200712A84 /* Meal_TimelineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal_TimelineTests.swift; sourceTree = "<group>"; };
-		B0EECD311B5E7B2B00712A84 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		B0EECD351B5E7E6800712A84 /* TakePictureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TakePictureViewController.swift; sourceTree = "<group>"; };
 		B0EECD391B5E851800712A84 /* RateImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateImageViewController.swift; sourceTree = "<group>"; };
+		BE1FD10D1B6481060052533C /* MealDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,8 +90,8 @@
 		B0EECD0D1B5E758200712A84 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B0EECD0C1B5E758200712A84 /* Meal Timeline.app */,
-				B0EECD211B5E758200712A84 /* Meal TimelineTests.xctest */,
+				B0EECD0C1B5E758200712A84 /* Feed.app */,
+				B0EECD211B5E758200712A84 /* FeedTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -162,10 +160,9 @@
 		B0EECD3D1B5E99F000712A84 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				B0EECD311B5E7B2B00712A84 /* HomeViewController.swift */,
-				B0EECD351B5E7E6800712A84 /* TakePictureViewController.swift */,
-				B0EECD391B5E851800712A84 /* RateImageViewController.swift */,
 				B0C1F3421B618E1400130714 /* IndexViewController.swift */,
+				B0EECD391B5E851800712A84 /* RateImageViewController.swift */,
+				BE1FD10D1B6481060052533C /* MealDetailsViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -173,9 +170,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B0EECD0B1B5E758200712A84 /* Meal Timeline */ = {
+		B0EECD0B1B5E758200712A84 /* Feed */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B0EECD2B1B5E758200712A84 /* Build configuration list for PBXNativeTarget "Meal Timeline" */;
+			buildConfigurationList = B0EECD2B1B5E758200712A84 /* Build configuration list for PBXNativeTarget "Feed" */;
 			buildPhases = (
 				B0EECD081B5E758200712A84 /* Sources */,
 				B0EECD091B5E758200712A84 /* Frameworks */,
@@ -185,14 +182,14 @@
 			);
 			dependencies = (
 			);
-			name = "Meal Timeline";
+			name = Feed;
 			productName = "Meal Timeline";
-			productReference = B0EECD0C1B5E758200712A84 /* Meal Timeline.app */;
+			productReference = B0EECD0C1B5E758200712A84 /* Feed.app */;
 			productType = "com.apple.product-type.application";
 		};
-		B0EECD201B5E758200712A84 /* Meal TimelineTests */ = {
+		B0EECD201B5E758200712A84 /* FeedTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B0EECD2E1B5E758200712A84 /* Build configuration list for PBXNativeTarget "Meal TimelineTests" */;
+			buildConfigurationList = B0EECD2E1B5E758200712A84 /* Build configuration list for PBXNativeTarget "FeedTests" */;
 			buildPhases = (
 				B0EECD1D1B5E758200712A84 /* Sources */,
 				B0EECD1E1B5E758200712A84 /* Frameworks */,
@@ -203,9 +200,9 @@
 			dependencies = (
 				B0EECD231B5E758200712A84 /* PBXTargetDependency */,
 			);
-			name = "Meal TimelineTests";
+			name = FeedTests;
 			productName = "Meal TimelineTests";
-			productReference = B0EECD211B5E758200712A84 /* Meal TimelineTests.xctest */;
+			productReference = B0EECD211B5E758200712A84 /* FeedTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -227,7 +224,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B0EECD071B5E758200712A84 /* Build configuration list for PBXProject "Meal Timeline" */;
+			buildConfigurationList = B0EECD071B5E758200712A84 /* Build configuration list for PBXProject "Feed" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -240,8 +237,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B0EECD0B1B5E758200712A84 /* Meal Timeline */,
-				B0EECD201B5E758200712A84 /* Meal TimelineTests */,
+				B0EECD0B1B5E758200712A84 /* Feed */,
+				B0EECD201B5E758200712A84 /* FeedTests */,
 			);
 		};
 /* End PBXProject section */
@@ -274,14 +271,13 @@
 			files = (
 				0F9616E21B645D6C00129783 /* Meal.swift in Sources */,
 				37582DE51B6269F500D41298 /* MealCollectionViewCell.swift in Sources */,
-				B0EECD361B5E7E6800712A84 /* TakePictureViewController.swift in Sources */,
 				B0EECD121B5E758200712A84 /* AppDelegate.swift in Sources */,
 				0F9616E41B64603E00129783 /* MealDB.swift in Sources */,
 				B0EECD3A1B5E851800712A84 /* RateImageViewController.swift in Sources */,
-				B0EECD321B5E7B2B00712A84 /* HomeViewController.swift in Sources */,
 				0F9616E01B645BF400129783 /* MealModel.xcdatamodeld in Sources */,
 				37582DE21B61700D00D41298 /* DayCircleView.swift in Sources */,
 				B0C1F3431B618E1500130714 /* IndexViewController.swift in Sources */,
+				BE1FD10E1B6481060052533C /* MealDetailsViewController.swift in Sources */,
 				0F9616E81B6467A300129783 /* ImageTransformer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -299,7 +295,7 @@
 /* Begin PBXTargetDependency section */
 		B0EECD231B5E758200712A84 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B0EECD0B1B5E758200712A84 /* Meal Timeline */;
+			target = B0EECD0B1B5E758200712A84 /* Feed */;
 			targetProxy = B0EECD221B5E758200712A84 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -341,6 +337,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -386,6 +383,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -414,7 +412,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Meal Timeline/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Feed;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -426,7 +424,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Meal Timeline/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Feed;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -445,7 +443,7 @@
 				);
 				INFOPLIST_FILE = "Meal TimelineTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = FeedTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Meal Timeline.app/Meal Timeline";
 			};
 			name = Debug;
@@ -460,7 +458,7 @@
 				);
 				INFOPLIST_FILE = "Meal TimelineTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = FeedTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Meal Timeline.app/Meal Timeline";
 			};
 			name = Release;
@@ -468,7 +466,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B0EECD071B5E758200712A84 /* Build configuration list for PBXProject "Meal Timeline" */ = {
+		B0EECD071B5E758200712A84 /* Build configuration list for PBXProject "Feed" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B0EECD291B5E758200712A84 /* Debug */,
@@ -477,7 +475,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B0EECD2B1B5E758200712A84 /* Build configuration list for PBXNativeTarget "Meal Timeline" */ = {
+		B0EECD2B1B5E758200712A84 /* Build configuration list for PBXNativeTarget "Feed" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B0EECD2C1B5E758200712A84 /* Debug */,
@@ -486,7 +484,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B0EECD2E1B5E758200712A84 /* Build configuration list for PBXNativeTarget "Meal TimelineTests" */ = {
+		B0EECD2E1B5E758200712A84 /* Build configuration list for PBXNativeTarget "FeedTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B0EECD2F1B5E758200712A84 /* Debug */,
