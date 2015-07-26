@@ -1,6 +1,6 @@
 //
-//  Meal_TimelineTests.swift
-//  Meal TimelineTests
+//  FeedTests.swift
+//  FeedTests
 //
 //  Created by Henrique do Prado Linhares on 21/07/15.
 //  Copyright (c) 2015 Henrique do Prado Linhares. All rights reserved.
@@ -9,7 +9,7 @@
 import UIKit
 import XCTest
 
-class Meal_TimelineTests: XCTestCase {
+class FeedTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
