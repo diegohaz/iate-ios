@@ -20,7 +20,7 @@
 		B0EECD121B5E758200712A84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EECD111B5E758200712A84 /* AppDelegate.swift */; };
 		B0EECD171B5E758200712A84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0EECD151B5E758200712A84 /* Main.storyboard */; };
 		B0EECD1C1B5E758200712A84 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0EECD1A1B5E758200712A84 /* LaunchScreen.xib */; };
-		B0EECD281B5E758200712A84 /* Meal_TimelineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EECD271B5E758200712A84 /* Meal_TimelineTests.swift */; };
+		B0EECD281B5E758200712A84 /* FeedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EECD271B5E758200712A84 /* FeedTests.swift */; };
 		B0EECD3A1B5E851800712A84 /* RateImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EECD391B5E851800712A84 /* RateImageViewController.swift */; };
 		BE1FD10E1B6481060052533C /* MealDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1FD10D1B6481060052533C /* MealDetailsViewController.swift */; };
 /* End PBXBuildFile section */
@@ -53,7 +53,7 @@
 		B0EECD1B1B5E758200712A84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		B0EECD211B5E758200712A84 /* FeedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FeedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0EECD261B5E758200712A84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B0EECD271B5E758200712A84 /* Meal_TimelineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal_TimelineTests.swift; sourceTree = "<group>"; };
+		B0EECD271B5E758200712A84 /* FeedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTests.swift; sourceTree = "<group>"; };
 		B0EECD391B5E851800712A84 /* RateImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateImageViewController.swift; sourceTree = "<group>"; };
 		BE1FD10D1B6481060052533C /* MealDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -81,8 +81,8 @@
 			isa = PBXGroup;
 			children = (
 				0F9616DC1B645BA400129783 /* CoreData.framework */,
-				B0EECD0E1B5E758200712A84 /* Meal Timeline */,
-				B0EECD241B5E758200712A84 /* Meal TimelineTests */,
+				B0EECD0E1B5E758200712A84 /* Feed */,
+				B0EECD241B5E758200712A84 /* FeedTests */,
 				B0EECD0D1B5E758200712A84 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -96,7 +96,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B0EECD0E1B5E758200712A84 /* Meal Timeline */ = {
+		B0EECD0E1B5E758200712A84 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
 				B0EECD111B5E758200712A84 /* AppDelegate.swift */,
@@ -107,7 +107,7 @@
 				37582DEB1B62826C00D41298 /* Images.xcassets */,
 				B0EECD0F1B5E758200712A84 /* Supporting Files */,
 			);
-			path = "Meal Timeline";
+			path = Feed;
 			sourceTree = "<group>";
 		};
 		B0EECD0F1B5E758200712A84 /* Supporting Files */ = {
@@ -118,13 +118,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		B0EECD241B5E758200712A84 /* Meal TimelineTests */ = {
+		B0EECD241B5E758200712A84 /* FeedTests */ = {
 			isa = PBXGroup;
 			children = (
-				B0EECD271B5E758200712A84 /* Meal_TimelineTests.swift */,
+				B0EECD271B5E758200712A84 /* FeedTests.swift */,
 				B0EECD251B5E758200712A84 /* Supporting Files */,
 			);
-			path = "Meal TimelineTests";
+			path = FeedTests;
 			sourceTree = "<group>";
 		};
 		B0EECD251B5E758200712A84 /* Supporting Files */ = {
@@ -286,7 +286,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0EECD281B5E758200712A84 /* Meal_TimelineTests.swift in Sources */,
+				B0EECD281B5E758200712A84 /* FeedTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,7 +410,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				INFOPLIST_FILE = "Meal Timeline/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Feed/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = Feed;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -422,7 +423,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				INFOPLIST_FILE = "Meal Timeline/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Feed/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = Feed;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -432,7 +434,7 @@
 		B0EECD2F1B5E758200712A84 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Feed.app/Feed";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -441,7 +443,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "Meal TimelineTests/Info.plist";
+				INFOPLIST_FILE = FeedTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = FeedTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Meal Timeline.app/Meal Timeline";
@@ -451,12 +453,12 @@
 		B0EECD301B5E758200712A84 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Feed.app/Feed";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "Meal TimelineTests/Info.plist";
+				INFOPLIST_FILE = FeedTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = FeedTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Meal Timeline.app/Meal Timeline";
