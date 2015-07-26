@@ -217,6 +217,7 @@ class IndexViewController: UIViewController, UIActionSheetDelegate, UIImagePicke
             var mycell = collectionView.dequeueReusableCellWithReuseIdentifier("MealCell", forIndexPath: indexPath) as! MealCollectionViewCell //GAMBI !!!!
             
             mycell.setHealthyLovely(healthy: meal.healthyValue as Float, lovely: meal.lovelyValue as Float)
+            mycell.setMealTime(meal.timeStamp)
             mycell.imageView.image = ImageTransformer().reverseTransformedValue(meal.image) as? UIImage
             
             return mycell

@@ -26,8 +26,11 @@ class MealCollectionViewCell: UICollectionViewCell {
         self.circle.setNeedsDisplay()
     }
     
-    func setMealTime(time: NSDate) {
+    func setMealTime(mealTime: NSDate) {
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "hh:mm"
         
+        time.text = formatter.stringFromDate(mealTime)
     }
 
 }
