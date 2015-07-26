@@ -10,7 +10,7 @@
         <!--Index View Controller-->
         <scene sceneID="FcX-si-bfv">
             <objects>
-                <viewController id="AJB-mj-p3P" customClass="IndexViewController" customModule="Meal_Timeline" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="AJB-mj-p3P" customClass="IndexViewController" customModule="Feed" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YSc-zc-JCT"/>
                         <viewControllerLayoutGuide type="bottom" id="zSN-ft-FuO"/>
@@ -19,10 +19,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nud-hf-V1I" userLabel="TodayCircle" customClass="DayCircleView" customModule="Meal_Timeline" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nud-hf-V1I" userLabel="TodayCircle" customClass="DayCircleView" customModule="Feed" customModuleProvider="target">
                                 <rect key="frame" x="210" y="36" width="180" height="180"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TODAY" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eH1-YP-fX8">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TODAY" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="eH1-YP-fX8">
                                         <rect key="frame" x="12" y="75" width="156" height="29"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -37,11 +37,13 @@
                                     <constraint firstAttribute="centerY" secondItem="eH1-YP-fX8" secondAttribute="centerY" id="Qak-1O-9Sf"/>
                                     <constraint firstAttribute="width" secondItem="nud-hf-V1I" secondAttribute="height" multiplier="1:1" id="b62-W6-1Aa"/>
                                     <constraint firstAttribute="trailing" secondItem="eH1-YP-fX8" secondAttribute="trailing" constant="12" id="gbj-eI-Z6x"/>
+                                    <constraint firstItem="eH1-YP-fX8" firstAttribute="width" secondItem="nud-hf-V1I" secondAttribute="height" multiplier="13:15" id="hkg-Mw-M5q"/>
                                     <constraint firstItem="eH1-YP-fX8" firstAttribute="leading" secondItem="nud-hf-V1I" secondAttribute="leading" constant="12" id="vaO-UX-EvM"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="J7v-0L-zkX"/>
+                                        <exclude reference="hkg-Mw-M5q"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -99,7 +101,7 @@
                                                         <outlet property="delegate" destination="AJB-mj-p3P" id="MCH-Yv-60f"/>
                                                     </connections>
                                                 </collectionView>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YcB-qI-0hv" customClass="DayCircleView" customModule="Meal_Timeline" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YcB-qI-0hv" customClass="DayCircleView" customModule="Feed" customModuleProvider="target">
                                                     <rect key="frame" x="8" y="0.0" width="70" height="70"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="17" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vzz-sz-5XR">
@@ -194,7 +196,7 @@
         <!--Rate Image View Controller-->
         <scene sceneID="rjP-Ba-dLQ">
             <objects>
-                <viewController id="U8B-4S-EE2" customClass="RateImageViewController" customModule="Meal_Timeline" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="U8B-4S-EE2" customClass="RateImageViewController" customModule="Feed" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VC9-dT-aOE"/>
                         <viewControllerLayoutGuide type="bottom" id="BtK-Zz-2Ww"/>
@@ -423,7 +425,7 @@
         <!--Meal Details View Controller-->
         <scene sceneID="Nu6-Nu-L6A">
             <objects>
-                <viewController id="8G8-Lq-9SR" customClass="MealDetailsViewController" customModule="Meal_Timeline" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8G8-Lq-9SR" customClass="MealDetailsViewController" customModule="Feed" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="f24-tB-wAt"/>
                         <viewControllerLayoutGuide type="bottom" id="geM-W8-eX0"/>
@@ -483,7 +485,7 @@
                                     <constraint firstAttribute="width" constant="59" id="QAr-gS-7wt"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -521,7 +523,7 @@
                                     <constraint firstAttribute="height" constant="21" id="diw-f9-SfH"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
