@@ -26,7 +26,7 @@ class MealCollectionViewCell: UICollectionViewCell {
         self.circle.setNeedsDisplay()
     }
     
-    func setTime(time: NSDate) {
+    func setMealTime(time: NSDate) {
         
     }
 
