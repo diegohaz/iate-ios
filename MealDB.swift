@@ -52,7 +52,7 @@ class MealDB {
         request.entity = entity
         
         //Ordenar a consulta por timeStamp
-        let sortDescriptor = NSSortDescriptor(key: "timeStamp", ascending: true)
+        let sortDescriptor = NSSortDescriptor(key: "timeStamp", ascending: false)
         let sortDescriptors = [sortDescriptor]
         
         //Executa a consulta
@@ -190,6 +190,10 @@ class MealDB {
     }
     
 
+    
+    
+    
+    
 
    /*  Funcao comparacao para ordenacao do vetor de Meals
     */
