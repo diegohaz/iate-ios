@@ -14,7 +14,6 @@ class MealDB {
     
     
 /* Metodo estatico que cria uma instancia de Meal. E insere o objeto no contexto de persistencia.
- *
  * Para instanciar um objeto Meal use : "MealDB.newInstance()"
  */
     class func newInstance() -> Meal
@@ -28,12 +27,10 @@ class MealDB {
         var meal = NSEntityDescription.insertNewObjectForEntityForName("Meal", inManagedObjectContext: context) as! Meal
         
         return meal
-        
     }
     
     
-/* Retorna todas as refeicoes salvas no Banco de Dados.
- * 
+/* Retorna todas as refeicoes salvas no Banco de Dados em ordem decrescente de datas.
  * Retorna um array de Meals, ordenado por datas == ID's, em ordem decrescente.
  */
     func getMeals() -> Array<Meal>
@@ -55,18 +52,21 @@ class MealDB {
         let sortDescriptor = NSSortDescriptor(key: "timeStamp", ascending: false)
         let sortDescriptors = [sortDescriptor]
         
+        request.sortDescriptors = sortDescriptors
+        
         //Executa a consulta
         var error : NSError? = nil
         let array = context.executeFetchRequest(request, error: &error)
         
         if (array == nil) {
-         
+            
             println("Erro \(error)")
+            
             return [] as Array<Meal>
+            
         }
         
         return array as! Array<Meal>
-        
         
         
     }
