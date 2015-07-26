@@ -24,9 +24,13 @@ class RateImageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.imageView.image = self.image
+        
         var tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
+        
         view.addGestureRecognizer(tap)
+     
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,46 +40,35 @@ class RateImageViewController: UIViewController {
     
     @IBAction func doneButtonAct(sender: UIButton) {
         
-        var data:[Meal] = AppData.sharedInstance.getData()
+        println("Nova refeicao criada. ok!!")
+        var mealInstance = MealDB.newInstance()
         
-        var mealInstance:Meal
-        mealInstance = Meal()
-        mealInstance.image = self.image!
-        mealInstance.date = self.imageDate
+        // UIImage convertida para NSData. Por que no Banco todas as imagens estao no formato NSData.
+        let newImageData = ImageTransformer().transformedValue(self.image) as! NSData
+        
+        // A partir daqui, vamos configurar a instancia refeicao. 
+        //Lembre-se que a data da refeicao é criada quando salvamos no Banco (funcao save).
+        mealInstance.image = newImageData
         mealInstance.healthyValue = self.healthySlider.value
         mealInstance.lovelyValue = self.lovelySlider.value
         
-        data.append(mealInstance)
+        // Salvando a nova refeicao
+        MealDB().save(mealInstance)
         
-        println("data size: ")
-        println(data.count)
+        // Recuperando as refeicoes ja salvas
+        let arrayMeals = MealDB().getMeals()
         
-        AppData.sharedInstance.setData(data)
+        println("BD size: ")
+        println(arrayMeals.count)
         
-    
-        
-        // SAVE INFO !
-        
-        self.performSegueWithIdentifier("backToIndex", sender: self)
-        //self.navigationController?.popToRootViewControllerAnimated(true)
+        // Segue para o IndexViewController
+         self.performSegueWithIdentifier("backToIndex", sender: self)
+
     }
 
-    //Calls this function when the tap is recognized.
+    
     func DismissKeyboard(){
-        //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }
-
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

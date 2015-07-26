@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F9616DD1B645BA400129783 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F9616DC1B645BA400129783 /* CoreData.framework */; };
+		0F9616E01B645BF400129783 /* MealModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0F9616DE1B645BF400129783 /* MealModel.xcdatamodeld */; };
+		0F9616E21B645D6C00129783 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9616E11B645D6C00129783 /* Meal.swift */; };
+		0F9616E41B64603E00129783 /* MealDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9616E31B64603E00129783 /* MealDB.swift */; };
+		0F9616E81B6467A300129783 /* ImageTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9616E71B6467A300129783 /* ImageTransformer.swift */; };
 		37582DE21B61700D00D41298 /* DayCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37582DE11B61700D00D41298 /* DayCircleView.swift */; };
 		37582DE51B6269F500D41298 /* MealCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37582DE31B6269F500D41298 /* MealCollectionViewCell.swift */; };
 		37582DE61B6269F500D41298 /* MealCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37582DE41B6269F500D41298 /* MealCollectionViewCell.xib */; };
@@ -19,8 +24,6 @@
 		B0EECD321B5E7B2B00712A84 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EECD311B5E7B2B00712A84 /* HomeViewController.swift */; };
 		B0EECD361B5E7E6800712A84 /* TakePictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EECD351B5E7E6800712A84 /* TakePictureViewController.swift */; };
 		B0EECD3A1B5E851800712A84 /* RateImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EECD391B5E851800712A84 /* RateImageViewController.swift */; };
-		B0EECD3F1B5E9A2C00712A84 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EECD3E1B5E9A2C00712A84 /* Meal.swift */; };
-		B0EECD411B5EA26200712A84 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EECD401B5EA26200712A84 /* AppData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +37,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F9616DC1B645BA400129783 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		0F9616DF1B645BF400129783 /* MealModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MealModel.xcdatamodel; sourceTree = "<group>"; };
+		0F9616E11B645D6C00129783 /* Meal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Meal.swift; path = ../Meal.swift; sourceTree = "<group>"; };
+		0F9616E31B64603E00129783 /* MealDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MealDB.swift; path = ../MealDB.swift; sourceTree = "<group>"; };
+		0F9616E71B6467A300129783 /* ImageTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageTransformer.swift; path = ../ImageTransformer.swift; sourceTree = "<group>"; };
 		37582DE11B61700D00D41298 /* DayCircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayCircleView.swift; sourceTree = "<group>"; };
 		37582DE31B6269F500D41298 /* MealCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealCollectionViewCell.swift; sourceTree = "<group>"; };
 		37582DE41B6269F500D41298 /* MealCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MealCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -50,8 +58,6 @@
 		B0EECD311B5E7B2B00712A84 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B0EECD351B5E7E6800712A84 /* TakePictureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TakePictureViewController.swift; sourceTree = "<group>"; };
 		B0EECD391B5E851800712A84 /* RateImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateImageViewController.swift; sourceTree = "<group>"; };
-		B0EECD3E1B5E9A2C00712A84 /* Meal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
-		B0EECD401B5EA26200712A84 /* AppData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F9616DD1B645BA400129783 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +82,7 @@
 		B0EECD031B5E758200712A84 = {
 			isa = PBXGroup;
 			children = (
+				0F9616DC1B645BA400129783 /* CoreData.framework */,
 				B0EECD0E1B5E758200712A84 /* Meal Timeline */,
 				B0EECD241B5E758200712A84 /* Meal TimelineTests */,
 				B0EECD0D1B5E758200712A84 /* Products */,
@@ -132,8 +140,10 @@
 		B0EECD3B1B5E99DE00712A84 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B0EECD3E1B5E9A2C00712A84 /* Meal.swift */,
-				B0EECD401B5EA26200712A84 /* AppData.swift */,
+				0F9616E11B645D6C00129783 /* Meal.swift */,
+				0F9616E31B64603E00129783 /* MealDB.swift */,
+				0F9616E71B6467A300129783 /* ImageTransformer.swift */,
+				0F9616DE1B645BF400129783 /* MealModel.xcdatamodeld */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -262,15 +272,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F9616E21B645D6C00129783 /* Meal.swift in Sources */,
 				37582DE51B6269F500D41298 /* MealCollectionViewCell.swift in Sources */,
-				B0EECD3F1B5E9A2C00712A84 /* Meal.swift in Sources */,
 				B0EECD361B5E7E6800712A84 /* TakePictureViewController.swift in Sources */,
 				B0EECD121B5E758200712A84 /* AppDelegate.swift in Sources */,
+				0F9616E41B64603E00129783 /* MealDB.swift in Sources */,
 				B0EECD3A1B5E851800712A84 /* RateImageViewController.swift in Sources */,
 				B0EECD321B5E7B2B00712A84 /* HomeViewController.swift in Sources */,
+				0F9616E01B645BF400129783 /* MealModel.xcdatamodeld in Sources */,
 				37582DE21B61700D00D41298 /* DayCircleView.swift in Sources */,
-				B0EECD411B5EA26200712A84 /* AppData.swift in Sources */,
 				B0C1F3431B618E1500130714 /* IndexViewController.swift in Sources */,
+				0F9616E81B6467A300129783 /* ImageTransformer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,6 +496,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		0F9616DE1B645BF400129783 /* MealModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				0F9616DF1B645BF400129783 /* MealModel.xcdatamodel */,
+			);
+			currentVersion = 0F9616DF1B645BF400129783 /* MealModel.xcdatamodel */;
+			name = MealModel.xcdatamodeld;
+			path = ../MealModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B0EECD041B5E758200712A84 /* Project object */;
 }
