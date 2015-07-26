@@ -10,8 +10,8 @@ import UIKit
 
 class DayCircleView: UIView {
     
-    var healthy = 0.75
-    var lovely = 0.25
+    var healthy: Float = 0.5
+    var lovely: Float = 0.5
 
     override func drawRect(rect: CGRect) {
         let stroke: CGFloat = bounds.width/20

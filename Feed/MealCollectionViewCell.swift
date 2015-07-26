@@ -9,12 +9,24 @@
 import UIKit
 
 class MealCollectionViewCell: UICollectionViewCell {
+    @IBOutlet weak var time: UILabel!
+    @IBOutlet weak var circle: DayCircleView!
     @IBOutlet weak var imageView: UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
         
         imageView.layer.cornerRadius = imageView.bounds.width/2
+        
+    }
+    
+    func setHealthyLovely(#healthy: Float, lovely: Float) {
+        self.circle.healthy = healthy
+        self.circle.lovely = lovely
+        self.circle.setNeedsDisplay()
+    }
+    
+    func setTime(time: NSDate) {
         
     }
 

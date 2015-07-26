@@ -213,13 +213,11 @@ class IndexViewController: UIViewController, UIActionSheetDelegate, UIImagePicke
         var cell: UICollectionViewCell!
         
         if collectionView.tag == 0 {
-            cell = collectionView.dequeueReusableCellWithReuseIdentifier("MealCell", forIndexPath: indexPath) as! MealCollectionViewCell
             let meal = todayMeals[indexPath.row]
-
-            var mycell = collectionView.dequeueReusableCellWithReuseIdentifier("MealCell", forIndexPath: indexPath) as! MealCollectionViewCell//GAMBI !!!!
+            var mycell = collectionView.dequeueReusableCellWithReuseIdentifier("MealCell", forIndexPath: indexPath) as! MealCollectionViewCell //GAMBI !!!!
             
-            mycell.imageView.image = ImageTransformer().reverseTransformedValue(todayMeals[indexPath.row].image) as? UIImage
-            
+            mycell.setHealthyLovely(healthy: meal.healthyValue as Float, lovely: meal.lovelyValue as Float)
+            mycell.imageView.image = ImageTransformer().reverseTransformedValue(meal.image) as? UIImage
             
             return mycell
             
