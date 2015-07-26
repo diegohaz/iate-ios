@@ -34,7 +34,7 @@ class MealDB {
     
 /* Retorna todas as refeicoes salvas no Banco de Dados.
  * 
- * Retorna um array de Meals, ordenado por datas == ID's, em ordem crescente.
+ * Retorna um array de Meals, ordenado por datas == ID's, em ordem decrescente.
  */
     func getMeals() -> Array<Meal>
     {
@@ -66,6 +66,8 @@ class MealDB {
         }
         
         return array as! Array<Meal>
+        
+        
         
     }
     
@@ -123,12 +125,12 @@ class MealDB {
         
     }
     
-/* Dado o ano, funcao retorna o vetor com as datas distintas (e completas) das refeicoes.
+/* Dado o ano, funcao retorna o vetor com as datas distintas (e completas) das refeicoes. Ordem decrescente.
  * Retorna Array de NSDateComponents - datas distintos em dia, mes e ano.
  * Exemplo 1: "let MealDatesArray = MealDB().getEveryMealDays(2015)"
  * Exemplo 2: "println(daysMealArray[i].day)"
  */
-    func getEveryMealDates (ano: Int) -> Array<NSDateComponents>
+    func getEveryMealDates () -> Array<NSDateComponents>
     {
         // Vetor com as datas procuradas
         var array = [NSDateComponents]()
@@ -147,19 +149,16 @@ class MealDB {
             // Inicio da construcao do vetor de datas
             if( array.count == 0) {
                 
-                if (year == ano) {
-                    
-                    var dateFound = NSDateComponents()
+                  var dateFound = NSDateComponents()
                     dateFound.day = day
                     dateFound.month = month
                     dateFound.year  = year
                     
                     array.append(dateFound)
-                }
                 
             } else {
                 
-                if ((year == ano && day != array[array.count - 1].day) || (year == ano && month != array[array.count - 1].month)) {
+                if ((day != array[array.count - 1].day) || (month != array[array.count - 1].month) || (year != array[array.count - 1].year)) {
                     
                     var dateFound = NSDateComponents()
                     dateFound.day = day
@@ -179,8 +178,16 @@ class MealDB {
     
 
 
+   /*  Funcao comparacao para ordenacao do vetor de Meals
+    */
+    func acsOrder(meal1: Meal, meal2: Meal) -> Bool {
+   
+        return meal1.timeStamp.compare(meal2.timeStamp) == .OrderedAscending
+    }
+    
+    
 
-/* Busca refeicoes por data. 
+/* Busca refeicoes por data. Ordem crescente.
  * Retorna vetor de Meals em uma data específica (parametro NSDateComponents).
  * Exemplo: "let refeicoes = MealDB().getMealsByDate(MealDatesArray[0]),
  * onde let MealDatesArray = MealDB().getEveryMealDates(2015)" - ver funcao acima.
@@ -210,7 +217,8 @@ class MealDB {
             
         } // Fim da construcao do vetor de refeicoes distintas na mesma data.
         
-        return array
+        // Devolve array em ordem crescente por data
+        return sorted(array, acsOrder)
         
     }
     
