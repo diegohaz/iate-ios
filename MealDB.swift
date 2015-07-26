@@ -123,16 +123,17 @@ class MealDB {
         
     }
     
-/* Dado o mes e o ano, retorna vetor com os dias distintos das refeicoes.
- * Retorna Array de inteiros - dias distintos das refeicoes cadastradas ate entao.
- * Exemplo de uso em outras classes: "let daysMealArray = MealDB().getEveryMealDays(7, ano: 2015)"
+/* Dado o ano, funcao retorna o vetor com as datas distintas (e completas) das refeicoes.
+ * Retorna Array de NSDateComponents - datas distintos em dia, mes e ano.
+ * Exemplo 1: "let MealDatesArray = MealDB().getEveryMealDays(2015)"
+ * Exemplo 2: "println(daysMealArray[i].day)"
  */
-    func getEveryMealDays (mes: Int, ano: Int) -> Array<Int>
+    func getEveryMealDates (ano: Int) -> Array<NSDateComponents>
     {
-        // Vetor com dias das refeicoes em um mes e ano especificos.
-        var array = [Int]()
+        // Vetor com as datas procuradas
+        var array = [NSDateComponents]()
         
-        // Monitorando o Banco em busca das refeicoes desejadas
+        // Monitorando o Banco em busca das datas procuradas
         for(var i = 0; i < getMeals().count; i++) {
             
             // Converte NSDate para os valores inteiros "day, month e year".
@@ -143,41 +144,53 @@ class MealDB {
             let month = components.month
             let year = components.year
             
-            // Construindo o vetor de dias das refeicoes cadastradas no Banco.
+            // Inicio da construcao do vetor de datas
             if( array.count == 0) {
                 
-                if (month == mes && year == ano) {
+                if (year == ano) {
                     
-                    array.append(day)
+                    var dateFound = NSDateComponents()
+                    dateFound.day = day
+                    dateFound.month = month
+                    dateFound.year  = year
+                    
+                    array.append(dateFound)
                 }
                 
             } else {
                 
-                if (month == mes && year == ano && day != array[array.count - 1]) {
+                if ((year == ano && day != array[array.count - 1].day) || (year == ano && month != array[array.count - 1].month)) {
                     
-                    array.append(day)
+                    var dateFound = NSDateComponents()
+                    dateFound.day = day
+                    dateFound.month = month
+                    dateFound.year  = year
                     
+                    array.append(dateFound)
                 }
             }
             
-        } // Vetor dos dias das refeicoes pronto.
+            if (array.count > 30) { break }
+            
+        } // Fim da construcao do vetor de datas com ate 30 elementos (datas) distintas.
         
         return array
-        
     }
+    
 
 
 
 /* Busca refeicoes por data. 
- * Retorna vetor de Meals em uma data específica (os parametros sao valores inteiros).
- * Exemplo de uso em outras classes: "let refeicoes = MealDB().getMealsByDate(26, mes: 8, ano: 2015)"
+ * Retorna vetor de Meals em uma data específica (parametro NSDateComponents).
+ * Exemplo: "let refeicoes = MealDB().getMealsByDate(MealDatesArray[0]),
+ * onde let MealDatesArray = MealDB().getEveryMealDates(2015)" - ver funcao acima.
  */
-    func getMealsByDate(dia: Int, mes: Int, ano: Int) -> Array<Meal>
+    func getMealsByDate(data: NSDateComponents) -> Array<Meal>
     {
         // Vetor com as refeicoes procuradas.
         var array = [Meal]()
         
-        // Monitorando o Banco em busca das refeicoes desejadas
+        // Monitorando o Banco em busca das refeicoes.
         for(var i = 0; i < getMeals().count; i++) {
             
             // Converte NSDate para os valores inteiros "day, month e year".
@@ -188,13 +201,14 @@ class MealDB {
             let month = components.month
             let year = components.year
             
-            // Construindo o vetor de refeicoes procurado.
-            if (day == dia && month == mes && year == ano) {
+            // Inicio da construcao do vetor de refeicoes.
+            if (day == data.day && month == data.month && year == data.year) {
                 
                 array.append(getMeals()[i])
+                
             }
             
-        } // Vetor das refeicoes procuradas pronto.
+        } // Fim da construcao do vetor de refeicoes distintas na mesma data.
         
         return array
         
