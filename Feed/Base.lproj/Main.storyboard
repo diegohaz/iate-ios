@@ -183,6 +183,7 @@
                     <navigationItem key="navigationItem" id="xHO-gt-nn5"/>
                     <connections>
                         <outlet property="pastCollectionView" destination="qKo-XW-0G4" id="Dae-f6-OKc"/>
+                        <outlet property="todayCircle" destination="nud-hf-V1I" id="ooA-UZ-OB5"/>
                         <outlet property="todayCircleHeight" destination="LeR-Mz-GX2" id="mDO-29-UE4"/>
                         <outlet property="todayCollectionView" destination="wGn-Ms-GfQ" id="NNf-1w-KBK"/>
                         <segue destination="U8B-4S-EE2" kind="presentation" identifier="goRate" id="Tr1-cC-Qse"/>

@@ -17,9 +17,10 @@ class IndexViewController: UIViewController, UIActionSheetDelegate, UIImagePicke
     var newMedia:Bool?
     var selectedMeal:Meal?
     
+    @IBOutlet weak var todayCircle: DayCircleView!
     @IBOutlet weak var todayCircleHeight: NSLayoutConstraint!
-    var todayMeals = [Meal]()
-    var pastMeals  = [Meal]()
+    var todayMeals: Array<Meal> = []
+    var pastMeals: Array<Meal> = []
     
     @IBOutlet weak var todayCollectionView: UICollectionView!
     @IBOutlet weak var pastCollectionView: UICollectionView!
@@ -28,9 +29,20 @@ class IndexViewController: UIViewController, UIActionSheetDelegate, UIImagePicke
         super.viewDidLoad()
         
         todayCollectionView.registerNib(UINib(nibName: "MealCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MealCell")
+        todayMeals = MealDB().getMealsByDate(NSCalendar.currentCalendar().components(.CalendarUnitDay | .CalendarUnitMonth | .CalendarUnitYear, fromDate: NSDate()))
         
-        todayMeals = MealDB().getMeals()
-
+        var healthyCount: Float = 0
+        var lovelyCount: Float = 0
+        
+        for meal in todayMeals {
+            meal.uiImage = ImageTransformer().reverseTransformedValue(meal.image) as? UIImage
+            healthyCount += meal.healthyValue as Float
+            lovelyCount += meal.lovelyValue as Float
+        }
+        
+        todayCircle.healthy = healthyCount / Float(todayMeals.count)
+        todayCircle.lovely = lovelyCount / Float(todayMeals.count)
+        todayCircle.setNeedsDisplay()
         todayCollectionView.reloadData()
         
         pastMeals = MealDB().getMeals()
@@ -38,9 +50,10 @@ class IndexViewController: UIViewController, UIActionSheetDelegate, UIImagePicke
         pastCollectionView.reloadData()
     }
     
-    override func viewWillAppear(animated: Bool) {
-        todayMeals = MealDB().getMeals()
-        todayCollectionView.reloadData()
+    override func viewDidAppear(animated: Bool) {
+        if (todayMeals.count > 0) {
+            todayCollectionView.scrollToItemAtIndexPath(NSIndexPath(forItem: todayMeals.count - 1, inSection: 0), atScrollPosition: .Right, animated: false)
+        }
     }
     
     
@@ -218,7 +231,7 @@ class IndexViewController: UIViewController, UIActionSheetDelegate, UIImagePicke
             
             mycell.setHealthyLovely(healthy: meal.healthyValue as Float, lovely: meal.lovelyValue as Float)
             mycell.setMealTime(meal.timeStamp)
-            mycell.imageView.image = ImageTransformer().reverseTransformedValue(meal.image) as? UIImage
+            mycell.imageView.image = meal.uiImage
             
             return mycell
             
