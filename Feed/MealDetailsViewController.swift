@@ -23,12 +23,20 @@ class MealDetailsViewController: UIViewController {
     
     @IBOutlet weak var lovelySlider: UISlider!
     
+    @IBOutlet weak var bodyTextView: UITextView!
+    
     var meal:Meal!
     var isEditing:Bool?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name:UIKeyboardWillShowNotification, object: nil);
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name:UIKeyboardWillHideNotification, object: nil);
+        
+        var tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
+        
+        view.addGestureRecognizer(tap)
+        
 
         self.imageVIew.image =  ImageTransformer().reverseTransformedValue(self.meal?.image) as? UIImage
         
@@ -40,6 +48,9 @@ class MealDetailsViewController: UIViewController {
         self.lovelySlider.value = self.meal.lovelyValue as! Float
         self.lovelySlider.enabled = false
         
+        self.bodyTextView.text = self.meal?.body
+        self.bodyTextView.editable = false
+        
         self.isEditing = false
     }
 
@@ -48,6 +59,7 @@ class MealDetailsViewController: UIViewController {
     @IBAction func editButtonAction(sender: UIButton) {
         if (self.isEditing == true){//if is editing
             self.isEditing = false
+            self.bodyTextView.editable = false
             self.healthySlider.enabled = false
             self.lovelySlider.enabled = false
             self.deleteButton.hidden = false
@@ -55,10 +67,13 @@ class MealDetailsViewController: UIViewController {
             self.editButton.setTitle("Edit", forState: UIControlState.Normal)
             self.meal.healthyValue = self.healthySlider.value
             self.meal.lovelyValue = self.lovelySlider.value
+            self.meal.body = self.bodyTextView.text
             //Must save it into the Singleton!
+            MealDB().save(self.meal)
             
         } else if (self.isEditing == false) {//if is not editing
             self.isEditing = true
+            self.bodyTextView.editable = true
             self.deleteButton.hidden = true
             self.doneButton.hidden = true
             self.healthySlider.enabled = true
@@ -84,6 +99,25 @@ class MealDetailsViewController: UIViewController {
     @IBAction func deleteButtonAct(sender: UIButton) {
         MealDB().delete(self.meal)
         self.performSegueWithIdentifier("backToIndex", sender: self)
+    }
+    
+    
+    func DismissKeyboard(){
+        view.endEditing(true)
+    }
+    
+    func keyboardWillShow(sender: NSNotification) {
+        if (self.bodyTextView.text == "Description (optional)"){
+            self.bodyTextView.text = nil
+        }
+        self.view.frame.origin.y -= 150
+    }
+    
+    func keyboardWillHide(sender: NSNotification) {
+        if (self.bodyTextView.text == "" || self.bodyTextView.text == " "){
+            self.bodyTextView.text = "Description (optional)"
+        }
+        self.view.frame.origin.y += 150
     }
     
     /*

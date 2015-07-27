@@ -56,6 +56,7 @@ class RateImageViewController: UIViewController {
         mealInstance.healthyValue = self.healthySlider.value
         mealInstance.lovelyValue = self.lovelySlider.value
         mealInstance.body = self.bodyTextView.text
+        mealInstance.timeStamp = self.imageDate!
         
         // Salvando a nova refeicao
         MealDB().save(mealInstance)

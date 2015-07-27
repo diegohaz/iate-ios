@@ -79,7 +79,7 @@ class MealDB {
         let context = appDelegate.managedObjectContext!
         
         // Seta o timeStamp como se fosse o id
-        meal.timeStamp = NSDate()
+        //meal.timeStamp = NSDate()
         
         //Salva a meal
         var error : NSError? = nil

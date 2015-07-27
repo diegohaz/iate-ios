@@ -304,9 +304,14 @@ class IndexViewController: UIViewController, UIActionSheetDelegate, UIImagePicke
 
     //quando seleciona um item, vai para a tela de Details
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        println("passou aqui! tag: \(collectionView.tag)")
         if (collectionView.tag==0){
             self.selectedMeal = todayMeals[indexPath.row]
             self.performSegueWithIdentifier("showMealDetails", sender: self)
+        }
+        if (collectionView.tag == 2 ){
+           self.selectedMeal = pastMeals[currentDay][indexPath.row]
+        self.performSegueWithIdentifier("showMealDetails", sender: self)
         }
     }
 
