@@ -22,6 +22,7 @@ class IndexViewController: UIViewController, UIActionSheetDelegate, UIImagePicke
     var todayMeals: Array<Meal> = []
     var pastMeals: [Array<Meal>] = []
     var pastDays: Array<NSDateComponents> = []
+    var currentDay: Int = 1
     
     @IBOutlet weak var todayCollectionView: UICollectionView!
     @IBOutlet weak var pastCollectionView: UICollectionView!
@@ -49,7 +50,13 @@ class IndexViewController: UIViewController, UIActionSheetDelegate, UIImagePicke
         pastDays = MealDB().getEveryMealDates()
         
         for day in pastDays {
-            pastMeals.append(MealDB().getMealsByDate(day))
+            let meals = MealDB().getMealsByDate(day)
+            
+            for meal in meals {
+                meal.uiImage = ImageTransformer().reverseTransformedValue(meal.image) as? UIImage
+            }
+            
+            pastMeals.append(meals)
         }
         
         pastCollectionView.reloadData()
@@ -229,7 +236,13 @@ class IndexViewController: UIViewController, UIActionSheetDelegate, UIImagePicke
         } else if collectionView.tag == 1 {
             return pastDays.count
         } else {
-            return pastMeals.count
+            currentDay++
+            
+            if currentDay > pastDays.count {
+                currentDay = 0
+            }
+            
+            return pastMeals[currentDay].count
         }
     }
     
@@ -271,7 +284,12 @@ class IndexViewController: UIViewController, UIActionSheetDelegate, UIImagePicke
             return cell
         } else {
             collectionView.registerNib(UINib(nibName: "MealCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MealCell")
+            let meal = pastMeals[currentDay][indexPath.row]
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("MealCell", forIndexPath: indexPath) as! MealCollectionViewCell
+            
+            cell.setHealthyLovely(healthy: meal.healthyValue as Float, lovely: meal.lovelyValue as Float)
+            cell.setMealTime(meal.timeStamp)
+            cell.imageView.image = meal.uiImage
             
             return cell
         }
