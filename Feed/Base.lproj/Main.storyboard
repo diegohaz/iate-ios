@@ -163,30 +163,44 @@
                                     <outlet property="delegate" destination="AJB-mj-p3P" id="WIc-XE-LVF"/>
                                 </connections>
                             </collectionView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ap-gO-qCb">
+                                <rect key="frame" x="16" y="222" width="217.5" height="90"/>
+                                <string key="text">You still don't have meals today
+Take a pic next time you eat</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="wGn-Ms-GfQ" firstAttribute="centerY" secondItem="7ap-gO-qCb" secondAttribute="centerY" id="IaN-TB-6hR"/>
                             <constraint firstAttribute="centerX" secondItem="nud-hf-V1I" secondAttribute="centerX" id="IbM-Dj-47H"/>
                             <constraint firstItem="wGn-Ms-GfQ" firstAttribute="top" secondItem="01r-Fi-wuf" secondAttribute="top" constant="1" id="WG7-OB-ahU"/>
                             <constraint firstItem="01r-Fi-wuf" firstAttribute="leading" secondItem="wGn-Ms-GfQ" secondAttribute="trailing" constant="15" id="YTM-kc-fpP"/>
                             <constraint firstAttribute="trailing" secondItem="qKo-XW-0G4" secondAttribute="trailing" id="ZM2-yB-8Yr"/>
                             <constraint firstItem="qKo-XW-0G4" firstAttribute="leading" secondItem="b1g-RO-9Fn" secondAttribute="leading" id="bBW-4v-rIn"/>
+                            <constraint firstItem="wGn-Ms-GfQ" firstAttribute="leading" secondItem="7ap-gO-qCb" secondAttribute="leading" constant="-8" id="brq-aN-N0S"/>
+                            <constraint firstItem="wGn-Ms-GfQ" firstAttribute="height" secondItem="7ap-gO-qCb" secondAttribute="height" id="d6A-Tz-mBe"/>
                             <constraint firstAttribute="trailing" secondItem="01r-Fi-wuf" secondAttribute="trailing" constant="15" id="jRU-GN-Lit"/>
                             <constraint firstAttribute="bottom" secondItem="qKo-XW-0G4" secondAttribute="bottom" id="lxp-hQ-4gs"/>
                             <constraint firstItem="wGn-Ms-GfQ" firstAttribute="top" secondItem="nud-hf-V1I" secondAttribute="bottom" constant="16" id="p6m-ri-Qcx"/>
                             <constraint firstItem="wGn-Ms-GfQ" firstAttribute="centerY" secondItem="01r-Fi-wuf" secondAttribute="centerY" constant="10" id="r6z-wW-wi4"/>
+                            <constraint firstItem="01r-Fi-wuf" firstAttribute="centerY" secondItem="7ap-gO-qCb" secondAttribute="centerY" id="ukn-Qm-PWc"/>
                             <constraint firstItem="wGn-Ms-GfQ" firstAttribute="leading" secondItem="b1g-RO-9Fn" secondAttribute="leading" constant="8" id="wbE-7f-ipD"/>
                             <constraint firstItem="qKo-XW-0G4" firstAttribute="top" secondItem="wGn-Ms-GfQ" secondAttribute="bottom" constant="8" id="z1m-YG-VDl"/>
                             <constraint firstItem="nud-hf-V1I" firstAttribute="top" secondItem="YSc-zc-JCT" secondAttribute="bottom" constant="16" id="ziU-6C-X9x"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="IaN-TB-6hR"/>
                                 <exclude reference="WG7-OB-ahU"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="xHO-gt-nn5"/>
                     <connections>
+                        <outlet property="message" destination="7ap-gO-qCb" id="0H7-Cp-r5c"/>
                         <outlet property="pastCollectionView" destination="qKo-XW-0G4" id="Dae-f6-OKc"/>
                         <outlet property="todayCircle" destination="nud-hf-V1I" id="ooA-UZ-OB5"/>
                         <outlet property="todayCircleHeight" destination="LeR-Mz-GX2" id="mDO-29-UE4"/>

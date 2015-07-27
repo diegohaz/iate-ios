@@ -17,6 +17,7 @@ class IndexViewController: UIViewController, UIActionSheetDelegate, UIImagePicke
     var newMedia:Bool?
     var selectedMeal:Meal?
     
+    @IBOutlet weak var message: UILabel!
     @IBOutlet weak var todayCircle: DayCircleView!
     @IBOutlet weak var todayCircleHeight: NSLayoutConstraint!
     var todayMeals: Array<Meal> = []
@@ -65,6 +66,12 @@ class IndexViewController: UIViewController, UIActionSheetDelegate, UIImagePicke
     override func viewDidAppear(animated: Bool) {
         if (todayMeals.count > 0) {
             todayCollectionView.scrollToItemAtIndexPath(NSIndexPath(forItem: todayMeals.count - 1, inSection: 0), atScrollPosition: .Right, animated: false)
+        }
+        
+        if todayMeals.count == 0 {
+            message.hidden = false
+        } else {
+            message.hidden = true
         }
     }
     
