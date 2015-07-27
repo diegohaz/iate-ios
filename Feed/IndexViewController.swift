@@ -22,7 +22,7 @@ class IndexViewController: UIViewController, UIActionSheetDelegate, UIImagePicke
     var todayMeals: Array<Meal> = []
     var pastMeals: [Array<Meal>] = []
     var pastDays: Array<NSDateComponents> = []
-    var currentDay: Int = 1
+    var currentDay: Int = 0
     
     @IBOutlet weak var todayCollectionView: UICollectionView!
     @IBOutlet weak var pastCollectionView: UICollectionView!
@@ -238,7 +238,7 @@ class IndexViewController: UIViewController, UIActionSheetDelegate, UIImagePicke
         } else {
             currentDay++
             
-            if currentDay > pastDays.count {
+            if currentDay >= pastDays.count {
                 currentDay = 0
             }
             
