@@ -16,6 +16,7 @@
 		37582DE51B6269F500D41298 /* MealCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37582DE31B6269F500D41298 /* MealCollectionViewCell.swift */; };
 		37582DE61B6269F500D41298 /* MealCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37582DE41B6269F500D41298 /* MealCollectionViewCell.xib */; };
 		37582DEC1B62826C00D41298 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37582DEB1B62826C00D41298 /* Images.xcassets */; };
+		37E153C81B65B27500D3D3F1 /* DayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E153C71B65B27500D3D3F1 /* DayCollectionViewCell.swift */; };
 		B0C1F3431B618E1500130714 /* IndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C1F3421B618E1400130714 /* IndexViewController.swift */; };
 		B0EECD121B5E758200712A84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EECD111B5E758200712A84 /* AppDelegate.swift */; };
 		B0EECD171B5E758200712A84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0EECD151B5E758200712A84 /* Main.storyboard */; };
@@ -45,6 +46,7 @@
 		37582DE31B6269F500D41298 /* MealCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealCollectionViewCell.swift; sourceTree = "<group>"; };
 		37582DE41B6269F500D41298 /* MealCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MealCollectionViewCell.xib; sourceTree = "<group>"; };
 		37582DEB1B62826C00D41298 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		37E153C71B65B27500D3D3F1 /* DayCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayCollectionViewCell.swift; sourceTree = "<group>"; };
 		B0C1F3421B618E1400130714 /* IndexViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexViewController.swift; sourceTree = "<group>"; };
 		B0EECD0C1B5E758200712A84 /* Feed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Feed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0EECD101B5E758200712A84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 			children = (
 				B0EECD151B5E758200712A84 /* Main.storyboard */,
 				37582DE11B61700D00D41298 /* DayCircleView.swift */,
+				37E153C71B65B27500D3D3F1 /* DayCollectionViewCell.swift */,
 				37582DE31B6269F500D41298 /* MealCollectionViewCell.swift */,
 				37582DE41B6269F500D41298 /* MealCollectionViewCell.xib */,
 			);
@@ -271,6 +274,7 @@
 			files = (
 				0F9616E21B645D6C00129783 /* Meal.swift in Sources */,
 				37582DE51B6269F500D41298 /* MealCollectionViewCell.swift in Sources */,
+				37E153C81B65B27500D3D3F1 /* DayCollectionViewCell.swift in Sources */,
 				B0EECD121B5E758200712A84 /* AppDelegate.swift in Sources */,
 				0F9616E41B64603E00129783 /* MealDB.swift in Sources */,
 				B0EECD3A1B5E851800712A84 /* RateImageViewController.swift in Sources */,

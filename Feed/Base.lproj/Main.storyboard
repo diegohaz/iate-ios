@@ -76,7 +76,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="8" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DayCell" id="r0Q-MO-jBn">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DayCell" id="r0Q-MO-jBn" customClass="DayCollectionViewCell" customModule="Feed" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -110,7 +110,7 @@
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="OUT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ExY-bV-rKl">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="OUT" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ExY-bV-rKl">
                                                             <rect key="frame" x="0.0" y="38" width="70" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -133,6 +133,11 @@
                                             <constraint firstItem="YcB-qI-0hv" firstAttribute="leading" secondItem="r0Q-MO-jBn" secondAttribute="leadingMargin" id="Xie-3H-1E8"/>
                                             <constraint firstAttribute="centerY" secondItem="YcB-qI-0hv" secondAttribute="centerY" constant="10" id="pRj-wD-KpB"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="day" destination="vzz-sz-5XR" id="vQX-DJ-Gr0"/>
+                                            <outlet property="dayCircle" destination="YcB-qI-0hv" id="9ZP-JO-CJQ"/>
+                                            <outlet property="month" destination="ExY-bV-rKl" id="jAs-FW-cwv"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -183,6 +188,7 @@
                     <navigationItem key="navigationItem" id="xHO-gt-nn5"/>
                     <connections>
                         <outlet property="pastCollectionView" destination="qKo-XW-0G4" id="Dae-f6-OKc"/>
+                        <outlet property="todayCircle" destination="nud-hf-V1I" id="ooA-UZ-OB5"/>
                         <outlet property="todayCircleHeight" destination="LeR-Mz-GX2" id="mDO-29-UE4"/>
                         <outlet property="todayCollectionView" destination="wGn-Ms-GfQ" id="NNf-1w-KBK"/>
                         <segue destination="U8B-4S-EE2" kind="presentation" identifier="goRate" id="Tr1-cC-Qse"/>

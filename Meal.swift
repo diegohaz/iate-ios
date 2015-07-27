@@ -6,12 +6,13 @@
 //  Copyright (c) 2015 Henrique do Prado Linhares. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import CoreData
 
 @objc(Meal)
 class Meal: NSManagedObject {
 
+    var uiImage: UIImage?
     @NSManaged var image: NSData
     @NSManaged var timeStamp: NSDate
     @NSManaged var title: String
