@@ -249,6 +249,8 @@ class IndexViewController: UIViewController, UIActionSheetDelegate, UIImagePicke
                 currentDay = 0
             }
             
+            collectionView.tag = currentDay + 2
+            
             return pastMeals[currentDay].count
         }
     }
@@ -309,8 +311,8 @@ class IndexViewController: UIViewController, UIActionSheetDelegate, UIImagePicke
             self.selectedMeal = todayMeals[indexPath.row]
             self.performSegueWithIdentifier("showMealDetails", sender: self)
         }
-        if (collectionView.tag == 2 ){
-           self.selectedMeal = pastMeals[currentDay][indexPath.row]
+        if (collectionView.tag >= 2 ){
+           self.selectedMeal = pastMeals[collectionView.tag - 2][indexPath.row]
         self.performSegueWithIdentifier("showMealDetails", sender: self)
         }
     }
