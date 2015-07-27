@@ -23,6 +23,7 @@ class RateImageViewController: UIViewController {
     
     @IBOutlet weak var bodyTextView: UITextView!
     
+    @IBOutlet weak var circle: DayCircleView!
 
     
     override func viewDidLoad() {
@@ -31,10 +32,23 @@ class RateImageViewController: UIViewController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name:UIKeyboardWillHideNotification, object: nil);
         self.imageView.image = self.image
         
+        healthySlider.addTarget(self, action: "healthyChanged:", forControlEvents: UIControlEvents.ValueChanged)
+        lovelySlider.addTarget(self, action: "lovelyChanged:", forControlEvents: UIControlEvents.ValueChanged)
+        
         var tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
         
         view.addGestureRecognizer(tap)
      
+    }
+    
+    func lovelyChanged(slider: UISlider) {
+        circle.lovely = slider.value
+        circle.setNeedsDisplay()
+    }
+    
+    func healthyChanged(slider: UISlider) {
+        circle.healthy = slider.value
+        circle.setNeedsDisplay()
     }
 
     override func didReceiveMemoryWarning() {

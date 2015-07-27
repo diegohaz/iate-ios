@@ -11,6 +11,7 @@ import UIKit
 class MealDetailsViewController: UIViewController {
     
     
+    @IBOutlet weak var circle: DayCircleView!
     @IBOutlet weak var imageVIew: UIImageView!
     
     @IBOutlet weak var editButton: UIButton!
@@ -51,10 +52,25 @@ class MealDetailsViewController: UIViewController {
         self.bodyTextView.text = self.meal?.body
         self.bodyTextView.editable = false
         
+        circle.lovely = lovelySlider.value
+        circle.healthy = healthySlider.value
+        circle.setNeedsDisplay()
+        
         self.isEditing = false
+        
+        healthySlider.addTarget(self, action: "healthyChanged:", forControlEvents: UIControlEvents.ValueChanged)
+        lovelySlider.addTarget(self, action: "lovelyChanged:", forControlEvents: UIControlEvents.ValueChanged)
     }
-
-
+    
+    func lovelyChanged(slider: UISlider) {
+        circle.lovely = slider.value
+        circle.setNeedsDisplay()
+    }
+    
+    func healthyChanged(slider: UISlider) {
+        circle.healthy = slider.value
+        circle.setNeedsDisplay()
+    }
     
     @IBAction func editButtonAction(sender: UIButton) {
         if (self.isEditing == true){//if is editing
@@ -64,7 +80,7 @@ class MealDetailsViewController: UIViewController {
             self.lovelySlider.enabled = false
             self.deleteButton.hidden = false
             self.doneButton.hidden = false
-            self.editButton.setTitle("Edit", forState: UIControlState.Normal)
+            self.editButton.setImage(UIImage(named: "edit"), forState: UIControlState.Normal)
             self.meal.healthyValue = self.healthySlider.value
             self.meal.lovelyValue = self.lovelySlider.value
             self.meal.body = self.bodyTextView.text
@@ -78,7 +94,7 @@ class MealDetailsViewController: UIViewController {
             self.doneButton.hidden = true
             self.healthySlider.enabled = true
             self.lovelySlider.enabled = true
-            self.editButton.setTitle("Save", forState: UIControlState.Normal)
+            self.editButton.setImage(UIImage(named: "done"), forState: UIControlState.Normal)
         }
         
         
