@@ -813,8 +813,10 @@ Take a pic next time you eat</string>
                         <outlet property="deleteButton" destination="EwP-ix-Egm" id="ikF-ti-Xys"/>
                         <outlet property="doneButton" destination="RV3-7I-jEZ" id="HpJ-ib-5qL"/>
                         <outlet property="editButton" destination="aER-ei-Rw7" id="0BD-Yh-bBV"/>
+                        <outlet property="healthyLabel" destination="2Rh-wq-9oL" id="vAp-xu-A7J"/>
                         <outlet property="healthySlider" destination="e3b-W4-eUe" id="4UZ-8Z-Tuo"/>
                         <outlet property="imageVIew" destination="VI7-e9-bcK" id="hdn-ue-XhA"/>
+                        <outlet property="lovelyLabel" destination="0M4-iz-Ygf" id="wfg-VU-4Kh"/>
                         <outlet property="lovelySlider" destination="FZN-7T-W0Y" id="ffY-Mv-RDJ"/>
                         <segue destination="AJB-mj-p3P" kind="show" identifier="backToIndex" id="7Oe-0I-e6q"/>
                     </connections>

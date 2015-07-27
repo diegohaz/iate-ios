@@ -26,6 +26,8 @@ class MealDetailsViewController: UIViewController {
     
     @IBOutlet weak var bodyTextView: UITextView!
     
+    @IBOutlet weak var healthyLabel: UILabel!
+    @IBOutlet weak var lovelyLabel: UILabel!
     var meal:Meal!
     var isEditing:Bool?
     
