@@ -360,6 +360,26 @@ Take a pic next time you eat</string>
                                     <action selector="doneButtonAct:" destination="U8B-4S-EE2" eventType="touchUpInside" id="vds-DO-aer"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Description (optional)" translatesAutoresizingMaskIntoConstraints="NO" id="WSG-2g-tgW">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="gaH-2w-RER"/>
+                                </constraints>
+                                <color key="textColor" white="0.60291236620795108" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="gaH-2w-RER"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="gaH-2w-RER"/>
+                                    </mask>
+                                </variation>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -376,6 +396,9 @@ Take a pic next time you eat</string>
                             <constraint firstItem="Qw5-t6-L5s" firstAttribute="leading" secondItem="Urd-HN-4qX" secondAttribute="leadingMargin" constant="5" id="eCo-Sw-czC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="PfN-ga-sr9" secondAttribute="trailing" constant="9" id="eIh-fz-2iI"/>
                             <constraint firstAttribute="centerX" secondItem="8Bb-BU-Z0D" secondAttribute="centerX" id="nfD-dD-GKY"/>
+                            <constraint firstItem="WSG-2g-tgW" firstAttribute="top" secondItem="PfN-ga-sr9" secondAttribute="bottom" constant="18" id="oc1-F3-2XD"/>
+                            <constraint firstItem="WSG-2g-tgW" firstAttribute="leading" secondItem="Urd-HN-4qX" secondAttribute="leadingMargin" constant="15" id="ogN-J6-sGv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="WSG-2g-tgW" secondAttribute="trailing" constant="15" id="rjC-xv-2l1"/>
                             <constraint firstItem="xYc-iQ-rU2" firstAttribute="top" secondItem="8Bb-BU-Z0D" secondAttribute="bottom" constant="14" id="rjd-7w-jhP"/>
                         </constraints>
                         <variation key="default">
@@ -386,22 +409,26 @@ Take a pic next time you eat</string>
                                 <exclude reference="Qw5-t6-L5s"/>
                                 <exclude reference="PfN-ga-sr9"/>
                                 <exclude reference="OAT-z9-lQc"/>
+                                <exclude reference="WSG-2g-tgW"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="Weh-xJ-KyT"/>
-                                <exclude reference="TfB-jD-vVU"/>
-                                <exclude reference="eCo-Sw-czC"/>
+                                <exclude reference="XcE-Zw-K0Z"/>
+                                <exclude reference="nfD-dD-GKY"/>
                                 <exclude reference="BMl-Wt-A1g"/>
                                 <exclude reference="cfs-jm-CZk"/>
-                                <exclude reference="Ppf-C4-H4E"/>
-                                <exclude reference="RTL-kZ-Wxw"/>
-                                <exclude reference="eIh-fz-2iI"/>
                                 <exclude reference="8TU-Ri-2Nq"/>
                                 <exclude reference="Gtb-ch-Hpx"/>
                                 <exclude reference="rjd-7w-jhP"/>
+                                <exclude reference="TfB-jD-vVU"/>
+                                <exclude reference="eCo-Sw-czC"/>
+                                <exclude reference="Ppf-C4-H4E"/>
+                                <exclude reference="RTL-kZ-Wxw"/>
+                                <exclude reference="eIh-fz-2iI"/>
+                                <exclude reference="oc1-F3-2XD"/>
+                                <exclude reference="ogN-J6-sGv"/>
+                                <exclude reference="rjC-xv-2l1"/>
                                 <exclude reference="Oz9-8n-6gh"/>
-                                <exclude reference="XcE-Zw-K0Z"/>
-                                <exclude reference="nfD-dD-GKY"/>
+                                <exclude reference="Weh-xJ-KyT"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -412,26 +439,31 @@ Take a pic next time you eat</string>
                                 <include reference="Qw5-t6-L5s"/>
                                 <include reference="PfN-ga-sr9"/>
                                 <include reference="OAT-z9-lQc"/>
+                                <include reference="WSG-2g-tgW"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="Weh-xJ-KyT"/>
-                                <include reference="TfB-jD-vVU"/>
-                                <include reference="eCo-Sw-czC"/>
+                                <include reference="XcE-Zw-K0Z"/>
+                                <include reference="nfD-dD-GKY"/>
                                 <include reference="BMl-Wt-A1g"/>
                                 <include reference="cfs-jm-CZk"/>
-                                <include reference="Ppf-C4-H4E"/>
-                                <include reference="RTL-kZ-Wxw"/>
-                                <include reference="eIh-fz-2iI"/>
                                 <include reference="8TU-Ri-2Nq"/>
                                 <include reference="Gtb-ch-Hpx"/>
                                 <include reference="rjd-7w-jhP"/>
+                                <include reference="TfB-jD-vVU"/>
+                                <include reference="eCo-Sw-czC"/>
+                                <include reference="Ppf-C4-H4E"/>
+                                <include reference="RTL-kZ-Wxw"/>
+                                <include reference="eIh-fz-2iI"/>
+                                <include reference="oc1-F3-2XD"/>
+                                <include reference="ogN-J6-sGv"/>
+                                <include reference="rjC-xv-2l1"/>
                                 <include reference="Oz9-8n-6gh"/>
-                                <include reference="XcE-Zw-K0Z"/>
-                                <include reference="nfD-dD-GKY"/>
+                                <include reference="Weh-xJ-KyT"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="bodyTextView" destination="WSG-2g-tgW" id="eEQ-ZW-KYb"/>
                         <outlet property="healthySlider" destination="xYc-iQ-rU2" id="cIi-Ly-Rqm"/>
                         <outlet property="imageView" destination="8Bb-BU-Z0D" id="ePR-Y7-GDg"/>
                         <outlet property="lovelySlider" destination="PfN-ga-sr9" id="fYk-Xv-ENe"/>
@@ -663,24 +695,24 @@ Take a pic next time you eat</string>
                                 <exclude reference="TyT-oo-Rza"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="D09-w9-uRG"/>
-                                <exclude reference="wVF-Ac-B2K"/>
                                 <exclude reference="ToH-j3-sdB"/>
                                 <exclude reference="ea5-qt-9ie"/>
-                                <exclude reference="119-OY-alm"/>
-                                <exclude reference="pRa-vD-WOR"/>
-                                <exclude reference="uKk-8f-aGz"/>
+                                <exclude reference="7Wz-0X-z0B"/>
+                                <exclude reference="F3R-nD-Elr"/>
+                                <exclude reference="j48-6w-5Jj"/>
                                 <exclude reference="5p8-lU-lgw"/>
                                 <exclude reference="Rsy-Pw-XQW"/>
                                 <exclude reference="Ttk-aK-KaH"/>
                                 <exclude reference="h3G-eq-dzj"/>
                                 <exclude reference="n5Z-8l-m5T"/>
+                                <exclude reference="119-OY-alm"/>
+                                <exclude reference="pRa-vD-WOR"/>
+                                <exclude reference="uKk-8f-aGz"/>
                                 <exclude reference="rSQ-Z6-F4V"/>
                                 <exclude reference="e6y-WY-Wv7"/>
-                                <exclude reference="7Wz-0X-z0B"/>
-                                <exclude reference="F3R-nD-Elr"/>
-                                <exclude reference="j48-6w-5Jj"/>
                                 <exclude reference="uo4-Bb-g89"/>
+                                <exclude reference="D09-w9-uRG"/>
+                                <exclude reference="wVF-Ac-B2K"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -695,24 +727,24 @@ Take a pic next time you eat</string>
                                 <include reference="TyT-oo-Rza"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="D09-w9-uRG"/>
-                                <include reference="wVF-Ac-B2K"/>
                                 <include reference="ToH-j3-sdB"/>
                                 <include reference="ea5-qt-9ie"/>
-                                <include reference="119-OY-alm"/>
-                                <include reference="pRa-vD-WOR"/>
-                                <include reference="uKk-8f-aGz"/>
+                                <include reference="7Wz-0X-z0B"/>
+                                <include reference="F3R-nD-Elr"/>
+                                <include reference="j48-6w-5Jj"/>
                                 <include reference="5p8-lU-lgw"/>
                                 <include reference="Rsy-Pw-XQW"/>
                                 <include reference="Ttk-aK-KaH"/>
                                 <include reference="h3G-eq-dzj"/>
                                 <include reference="n5Z-8l-m5T"/>
+                                <include reference="119-OY-alm"/>
+                                <include reference="pRa-vD-WOR"/>
+                                <include reference="uKk-8f-aGz"/>
                                 <include reference="rSQ-Z6-F4V"/>
                                 <include reference="e6y-WY-Wv7"/>
-                                <include reference="7Wz-0X-z0B"/>
-                                <include reference="F3R-nD-Elr"/>
-                                <include reference="j48-6w-5Jj"/>
                                 <include reference="uo4-Bb-g89"/>
+                                <include reference="D09-w9-uRG"/>
+                                <include reference="wVF-Ac-B2K"/>
                             </mask>
                         </variation>
                     </view>
@@ -735,6 +767,6 @@ Take a pic next time you eat</string>
         <image name="plus" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="7Oe-0I-e6q"/>
+        <segue reference="IS6-Q0-EGC"/>
     </inferredMetricsTieBreakers>
 </document>

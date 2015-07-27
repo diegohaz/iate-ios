@@ -20,11 +20,15 @@ class RateImageViewController: UIViewController {
     @IBOutlet weak var lovelySlider: UISlider!
 
     @IBOutlet weak var imageView: UIImageView!
+    
+    @IBOutlet weak var bodyTextView: UITextView!
+    
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name:UIKeyboardWillShowNotification, object: nil);
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name:UIKeyboardWillHideNotification, object: nil);
         self.imageView.image = self.image
         
         var tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
@@ -51,6 +55,7 @@ class RateImageViewController: UIViewController {
         mealInstance.image = newImageData
         mealInstance.healthyValue = self.healthySlider.value
         mealInstance.lovelyValue = self.lovelySlider.value
+        mealInstance.body = self.bodyTextView.text
         
         // Salvando a nova refeicao
         MealDB().save(mealInstance)
@@ -69,6 +74,20 @@ class RateImageViewController: UIViewController {
     
     func DismissKeyboard(){
         view.endEditing(true)
+    }
+    
+    func keyboardWillShow(sender: NSNotification) {
+        if (self.bodyTextView.text == "Description (optional)"){
+            self.bodyTextView.text = nil
+        }
+        self.view.frame.origin.y -= 150
+    }
+    
+    func keyboardWillHide(sender: NSNotification) {
+        if (self.bodyTextView.text == "" || self.bodyTextView.text == " "){
+            self.bodyTextView.text = "Description (optional)"
+        }
+        self.view.frame.origin.y += 150
     }
 
 }
