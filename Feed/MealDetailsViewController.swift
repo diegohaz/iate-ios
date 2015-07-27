@@ -30,8 +30,9 @@ class MealDetailsViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
 
-       // self.imageVIew.image = self.meal?.image
-        self.imageVIew.image = UIImage(named: "Symbol")
+        self.imageVIew.image =  ImageTransformer().reverseTransformedValue(self.meal?.image) as? UIImage
+        
+        
         
         self.healthySlider.value = self.meal.healthyValue as! Float
         self.healthySlider.enabled = false

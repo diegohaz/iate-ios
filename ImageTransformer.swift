@@ -35,7 +35,8 @@ class ImageTransformer : NSValueTransformer
     // Converte imagem: UImage -> NSDATA. Complemento: cast "(...) as NSData"
     override func transformedValue(value: AnyObject?) -> AnyObject? {
      
-        return UIImagePNGRepresentation(value as? UIImage)
+        let image = value as? UIImage
+        return UIImageJPEGRepresentation(image, 0.1)
     
     }
     
