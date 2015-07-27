@@ -20,7 +20,8 @@ class IndexViewController: UIViewController, UIActionSheetDelegate, UIImagePicke
     @IBOutlet weak var todayCircle: DayCircleView!
     @IBOutlet weak var todayCircleHeight: NSLayoutConstraint!
     var todayMeals: Array<Meal> = []
-    var pastMeals: Array<Meal> = []
+    var pastMeals: [Array<Meal>] = []
+    var pastDays: Array<NSDateComponents> = []
     
     @IBOutlet weak var todayCollectionView: UICollectionView!
     @IBOutlet weak var pastCollectionView: UICollectionView!
@@ -45,7 +46,11 @@ class IndexViewController: UIViewController, UIActionSheetDelegate, UIImagePicke
         todayCircle.setNeedsDisplay()
         todayCollectionView.reloadData()
         
-        pastMeals = MealDB().getMeals()
+        pastDays = MealDB().getEveryMealDates()
+        
+        for day in pastDays {
+            pastMeals.append(MealDB().getMealsByDate(day))
+        }
         
         pastCollectionView.reloadData()
     }
@@ -219,30 +224,57 @@ class IndexViewController: UIViewController, UIActionSheetDelegate, UIImagePicke
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return todayMeals.count
+        if collectionView.tag == 0 {
+            return todayMeals.count
+        } else if collectionView.tag == 1 {
+            return pastDays.count
+        } else {
+            return pastMeals.count
+        }
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        var cell: UICollectionViewCell!
-        
         if collectionView.tag == 0 {
             let meal = todayMeals[indexPath.row]
-            var mycell = collectionView.dequeueReusableCellWithReuseIdentifier("MealCell", forIndexPath: indexPath) as! MealCollectionViewCell //GAMBI !!!!
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("MealCell", forIndexPath: indexPath) as! MealCollectionViewCell
             
-            mycell.setHealthyLovely(healthy: meal.healthyValue as Float, lovely: meal.lovelyValue as Float)
-            mycell.setMealTime(meal.timeStamp)
-            mycell.imageView.image = meal.uiImage
+            cell.setHealthyLovely(healthy: meal.healthyValue as Float, lovely: meal.lovelyValue as Float)
+            cell.setMealTime(meal.timeStamp)
+            cell.imageView.image = meal.uiImage
             
-            return mycell
+            return cell
             
         } else if collectionView.tag == 1 {
-            cell = collectionView.dequeueReusableCellWithReuseIdentifier("DayCell", forIndexPath: indexPath) as! UICollectionViewCell
+            let day = pastDays[indexPath.row]
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("DayCell", forIndexPath: indexPath) as! DayCollectionViewCell
+            
+            var healthyCount: Float = 0
+            var lovelyCount: Float = 0
+            
+            for meal in pastMeals[indexPath.row] {
+                healthyCount += Float(meal.healthyValue)
+                lovelyCount += Float(meal.lovelyValue)
+            }
+            
+            let calendar = NSCalendar.currentCalendar()
+            let date = calendar.dateFromComponents(day)
+            let formatter = NSDateFormatter()
+            
+            cell.dayCircle.healthy = healthyCount / Float(pastMeals[indexPath.row].count)
+            cell.dayCircle.lovely = lovelyCount / Float(pastMeals[indexPath.row].count)
+            cell.dayCircle.setNeedsDisplay()
+            formatter.dateFormat = "dd"
+            cell.day.text = formatter.stringFromDate(date!)
+            formatter.dateFormat = "MMM"
+            cell.month.text = formatter.stringFromDate(date!).uppercaseString
+            
+            return cell
         } else {
             collectionView.registerNib(UINib(nibName: "MealCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MealCell")
-            cell = collectionView.dequeueReusableCellWithReuseIdentifier("MealCell", forIndexPath: indexPath) as! MealCollectionViewCell
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("MealCell", forIndexPath: indexPath) as! MealCollectionViewCell
+            
+            return cell
         }
-        
-        return cell
     }
 
     //quando seleciona um item, vai para a tela de Details
