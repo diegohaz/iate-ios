@@ -15,6 +15,10 @@ class MealDetailsViewController: UIViewController {
     
     @IBOutlet weak var editButton: UIButton!
 
+    @IBOutlet weak var deleteButton: UIButton!
+    
+    @IBOutlet weak var doneButton: UIButton!
+    
     @IBOutlet weak var healthySlider: UISlider!
     
     @IBOutlet weak var lovelySlider: UISlider!
@@ -45,6 +49,8 @@ class MealDetailsViewController: UIViewController {
             self.isEditing = false
             self.healthySlider.enabled = false
             self.lovelySlider.enabled = false
+            self.deleteButton.hidden = false
+            self.doneButton.hidden = false
             self.editButton.setTitle("Edit", forState: UIControlState.Normal)
             self.meal.healthyValue = self.healthySlider.value
             self.meal.lovelyValue = self.lovelySlider.value
@@ -52,6 +58,8 @@ class MealDetailsViewController: UIViewController {
             
         } else if (self.isEditing == false) {//if is not editing
             self.isEditing = true
+            self.deleteButton.hidden = true
+            self.doneButton.hidden = true
             self.healthySlider.enabled = true
             self.lovelySlider.enabled = true
             self.editButton.setTitle("Save", forState: UIControlState.Normal)
@@ -71,6 +79,12 @@ class MealDetailsViewController: UIViewController {
         self.performSegueWithIdentifier("backToIndex", sender: self)
     }
 
+    
+    @IBAction func deleteButtonAct(sender: UIButton) {
+        MealDB().delete(self.meal)
+        self.performSegueWithIdentifier("backToIndex", sender: self)
+    }
+    
     /*
     // MARK: - Navigation
 
