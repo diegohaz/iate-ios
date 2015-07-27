@@ -36,7 +36,7 @@ class ImageTransformer : NSValueTransformer
     override func transformedValue(value: AnyObject?) -> AnyObject? {
      
         let image = value as? UIImage
-        return UIImageJPEGRepresentation(image, 0.1)
+        return UIImageJPEGRepresentation(image, 0)
     
     }
     
