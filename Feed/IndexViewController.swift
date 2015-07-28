@@ -23,7 +23,7 @@ class IndexViewController: UIViewController, UIActionSheetDelegate, UIImagePicke
     var todayMeals: Array<Meal> = []
     var pastMeals: [Array<Meal>] = []
     var pastDays: Array<NSDateComponents> = []
-    var currentDay: Int = -1
+    var currentDay: Int = 0
     
     @IBOutlet weak var todayCollectionView: UICollectionView!
     @IBOutlet weak var pastCollectionView: UICollectionView!
@@ -52,8 +52,6 @@ class IndexViewController: UIViewController, UIActionSheetDelegate, UIImagePicke
         if (pastDays.count > 0) {
             pastDays.removeAtIndex(0)
         }
-        
-        currentDay = pastDays.count
         
         for day in pastDays {
             let meals = MealDB().getMealsByDate(day)
@@ -249,7 +247,7 @@ class IndexViewController: UIViewController, UIActionSheetDelegate, UIImagePicke
             currentDay--
             
             if currentDay < 0 {
-                currentDay = pastDays.count
+                currentDay = pastCollectionView.visibleCells().count - 1
             }
             
             println(currentDay)
@@ -257,12 +255,6 @@ class IndexViewController: UIViewController, UIActionSheetDelegate, UIImagePicke
             collectionView.tag = currentDay + 2
             
             return pastMeals[currentDay].count
-        }
-    }
-    
-    func collectionView(collectionView: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
-        if collectionView.tag >= 2 {
-            println(collectionView.tag - 2)
         }
     }
     
