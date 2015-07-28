@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AJB-mj-p3P">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -9,7 +10,7 @@
         <!--Index View Controller-->
         <scene sceneID="FcX-si-bfv">
             <objects>
-                <viewController id="AJB-mj-p3P" customClass="IndexViewController" customModule="Feed" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="AJB-mj-p3P" customClass="IndexViewController" customModule="i_Ate" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YSc-zc-JCT"/>
                         <viewControllerLayoutGuide type="bottom" id="zSN-ft-FuO"/>
@@ -18,7 +19,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nud-hf-V1I" userLabel="TodayCircle" customClass="DayCircleView" customModule="Feed" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nud-hf-V1I" userLabel="TodayCircle" customClass="DayCircleView" customModule="i_Ate" customModuleProvider="target">
                                 <rect key="frame" x="210" y="36" width="180" height="180"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TODAY" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="eH1-YP-fX8">
@@ -75,7 +76,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="8" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DayCell" id="r0Q-MO-jBn" customClass="DayCollectionViewCell" customModule="Feed" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="2" contentMode="center" reuseIdentifier="DayCell" id="r0Q-MO-jBn" customClass="DayCollectionViewCell" customModule="i_Ate" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -100,7 +101,7 @@
                                                         <outlet property="delegate" destination="AJB-mj-p3P" id="MCH-Yv-60f"/>
                                                     </connections>
                                                 </collectionView>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YcB-qI-0hv" customClass="DayCircleView" customModule="Feed" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YcB-qI-0hv" customClass="DayCircleView" customModule="i_Ate" customModuleProvider="target">
                                                     <rect key="frame" x="8" y="0.0" width="70" height="70"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="17" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vzz-sz-5XR">
@@ -215,7 +216,7 @@ Take a pic next time you eat</string>
         <!--Rate Image View Controller-->
         <scene sceneID="rjP-Ba-dLQ">
             <objects>
-                <viewController id="U8B-4S-EE2" customClass="RateImageViewController" customModule="Feed" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="U8B-4S-EE2" customClass="RateImageViewController" customModule="i_Ate" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VC9-dT-aOE"/>
                         <viewControllerLayoutGuide type="bottom" id="BtK-Zz-2Ww"/>
@@ -287,7 +288,7 @@ Take a pic next time you eat</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ee6-aq-o0C" customClass="DayCircleView" customModule="Feed" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ee6-aq-o0C" customClass="DayCircleView" customModule="i_Ate" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Bb-BU-Z0D">
@@ -418,24 +419,24 @@ Take a pic next time you eat</string>
                                 <exclude reference="Ee6-aq-o0C"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="6oP-70-nCH"/>
-                                <exclude reference="Jjd-cs-TzY"/>
-                                <exclude reference="KeV-y7-6SQ"/>
-                                <exclude reference="9ee-ZD-A6u"/>
-                                <exclude reference="VFU-UW-sOZ"/>
-                                <exclude reference="pkj-Ub-xlx"/>
-                                <exclude reference="s7E-9w-0ED"/>
+                                <exclude reference="UIs-La-ta2"/>
                                 <exclude reference="TfM-tj-acz"/>
+                                <exclude reference="KeV-y7-6SQ"/>
                                 <exclude reference="7eQ-Zt-4Z7"/>
                                 <exclude reference="Sbd-z2-i5J"/>
                                 <exclude reference="moI-p1-8xu"/>
                                 <exclude reference="oC4-5w-vci"/>
+                                <exclude reference="9ee-ZD-A6u"/>
+                                <exclude reference="VFU-UW-sOZ"/>
+                                <exclude reference="pkj-Ub-xlx"/>
+                                <exclude reference="s7E-9w-0ED"/>
+                                <exclude reference="Id4-vK-nf5"/>
+                                <exclude reference="eEs-84-XxK"/>
                                 <exclude reference="083-VK-cXB"/>
                                 <exclude reference="PKl-5j-f1j"/>
                                 <exclude reference="ciz-Mf-fW0"/>
-                                <exclude reference="Id4-vK-nf5"/>
-                                <exclude reference="eEs-84-XxK"/>
-                                <exclude reference="UIs-La-ta2"/>
+                                <exclude reference="6oP-70-nCH"/>
+                                <exclude reference="Jjd-cs-TzY"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -449,24 +450,24 @@ Take a pic next time you eat</string>
                                 <include reference="Ee6-aq-o0C"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="6oP-70-nCH"/>
-                                <include reference="Jjd-cs-TzY"/>
-                                <include reference="KeV-y7-6SQ"/>
-                                <include reference="9ee-ZD-A6u"/>
-                                <include reference="VFU-UW-sOZ"/>
-                                <include reference="pkj-Ub-xlx"/>
-                                <include reference="s7E-9w-0ED"/>
+                                <include reference="UIs-La-ta2"/>
                                 <include reference="TfM-tj-acz"/>
+                                <include reference="KeV-y7-6SQ"/>
                                 <include reference="7eQ-Zt-4Z7"/>
                                 <include reference="Sbd-z2-i5J"/>
                                 <include reference="moI-p1-8xu"/>
                                 <include reference="oC4-5w-vci"/>
+                                <include reference="9ee-ZD-A6u"/>
+                                <include reference="VFU-UW-sOZ"/>
+                                <include reference="pkj-Ub-xlx"/>
+                                <include reference="s7E-9w-0ED"/>
+                                <include reference="Id4-vK-nf5"/>
+                                <include reference="eEs-84-XxK"/>
                                 <include reference="083-VK-cXB"/>
                                 <include reference="PKl-5j-f1j"/>
                                 <include reference="ciz-Mf-fW0"/>
-                                <include reference="Id4-vK-nf5"/>
-                                <include reference="eEs-84-XxK"/>
-                                <include reference="UIs-La-ta2"/>
+                                <include reference="6oP-70-nCH"/>
+                                <include reference="Jjd-cs-TzY"/>
                             </mask>
                         </variation>
                     </view>
@@ -486,7 +487,7 @@ Take a pic next time you eat</string>
         <!--Meal Details View Controller-->
         <scene sceneID="Nu6-Nu-L6A">
             <objects>
-                <viewController id="8G8-Lq-9SR" customClass="MealDetailsViewController" customModule="Feed" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8G8-Lq-9SR" customClass="MealDetailsViewController" customModule="i_Ate" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="f24-tB-wAt"/>
                         <viewControllerLayoutGuide type="bottom" id="geM-W8-eX0"/>
@@ -495,7 +496,7 @@ Take a pic next time you eat</string>
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xbM-r3-a0D" customClass="DayCircleView" customModule="Feed" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xbM-r3-a0D" customClass="DayCircleView" customModule="i_Ate" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VI7-e9-bcK">
@@ -517,16 +518,16 @@ Take a pic next time you eat</string>
                                         </userDefinedRuntimeAttributes>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="w6A-4c-HOY"/>
                                                 <exclude reference="0eY-fu-Ic8"/>
                                                 <exclude reference="b3h-mj-fj1"/>
+                                                <exclude reference="w6A-4c-HOY"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=compact">
                                             <mask key="constraints">
-                                                <exclude reference="w6A-4c-HOY"/>
                                                 <include reference="0eY-fu-Ic8"/>
                                                 <include reference="b3h-mj-fj1"/>
+                                                <exclude reference="w6A-4c-HOY"/>
                                             </mask>
                                         </variation>
                                     </imageView>
@@ -549,8 +550,8 @@ Take a pic next time you eat</string>
                                     <mask key="constraints">
                                         <exclude reference="Y9c-3N-whP"/>
                                         <exclude reference="Z9M-6M-aYb"/>
-                                        <exclude reference="afU-SQ-sKb"/>
                                         <exclude reference="1SZ-X8-15t"/>
+                                        <exclude reference="afU-SQ-sKb"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
@@ -560,8 +561,8 @@ Take a pic next time you eat</string>
                                     <mask key="constraints">
                                         <include reference="Y9c-3N-whP"/>
                                         <include reference="Z9M-6M-aYb"/>
-                                        <include reference="afU-SQ-sKb"/>
                                         <include reference="1SZ-X8-15t"/>
+                                        <include reference="afU-SQ-sKb"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -607,14 +608,14 @@ Take a pic next time you eat</string>
                                 </userDefinedRuntimeAttributes>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="uXe-fb-uUM"/>
                                         <exclude reference="Nmv-lx-969"/>
+                                        <exclude reference="uXe-fb-uUM"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
-                                        <include reference="uXe-fb-uUM"/>
                                         <include reference="Nmv-lx-969"/>
+                                        <include reference="uXe-fb-uUM"/>
                                     </mask>
                                 </variation>
                                 <connections>
@@ -686,14 +687,14 @@ Take a pic next time you eat</string>
                                 </userDefinedRuntimeAttributes>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="p8v-JU-Eti"/>
                                         <exclude reference="Zhp-TR-OPO"/>
+                                        <exclude reference="p8v-JU-Eti"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
-                                        <include reference="p8v-JU-Eti"/>
                                         <include reference="Zhp-TR-OPO"/>
+                                        <include reference="p8v-JU-Eti"/>
                                     </mask>
                                 </variation>
                                 <connections>
@@ -745,28 +746,28 @@ Take a pic next time you eat</string>
                                 <exclude reference="EwP-ix-Egm"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="ojw-fc-YNe"/>
-                                <exclude reference="wbJ-62-vNo"/>
-                                <exclude reference="A9M-a1-U65"/>
-                                <exclude reference="6qq-Ai-0fC"/>
-                                <exclude reference="mKh-fk-8G5"/>
-                                <exclude reference="qp4-l5-yDa"/>
-                                <exclude reference="yLm-Io-Y3X"/>
                                 <exclude reference="vEn-PS-gbD"/>
+                                <exclude reference="A9M-a1-U65"/>
+                                <exclude reference="EW3-xB-mTi"/>
+                                <exclude reference="KoB-km-2gh"/>
+                                <exclude reference="POX-QV-xDU"/>
                                 <exclude reference="2zO-ZX-y9n"/>
                                 <exclude reference="get-pQ-t5D"/>
                                 <exclude reference="sft-Qg-QBn"/>
                                 <exclude reference="wdn-le-QeK"/>
+                                <exclude reference="6qq-Ai-0fC"/>
+                                <exclude reference="mKh-fk-8G5"/>
+                                <exclude reference="qp4-l5-yDa"/>
+                                <exclude reference="yLm-Io-Y3X"/>
+                                <exclude reference="o2f-jS-30j"/>
+                                <exclude reference="5Bv-cI-Ryf"/>
+                                <exclude reference="tVU-ys-UbY"/>
+                                <exclude reference="eaH-IC-EiY"/>
                                 <exclude reference="FWJ-Bg-RPq"/>
                                 <exclude reference="V3n-3S-tgg"/>
                                 <exclude reference="gNA-jA-lhy"/>
-                                <exclude reference="o2f-jS-30j"/>
-                                <exclude reference="eaH-IC-EiY"/>
-                                <exclude reference="EW3-xB-mTi"/>
-                                <exclude reference="KoB-km-2gh"/>
-                                <exclude reference="POX-QV-xDU"/>
-                                <exclude reference="5Bv-cI-Ryf"/>
-                                <exclude reference="tVU-ys-UbY"/>
+                                <exclude reference="ojw-fc-YNe"/>
+                                <exclude reference="wbJ-62-vNo"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -782,28 +783,28 @@ Take a pic next time you eat</string>
                                 <include reference="EwP-ix-Egm"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="ojw-fc-YNe"/>
-                                <include reference="wbJ-62-vNo"/>
-                                <include reference="A9M-a1-U65"/>
-                                <include reference="6qq-Ai-0fC"/>
-                                <include reference="mKh-fk-8G5"/>
-                                <include reference="qp4-l5-yDa"/>
-                                <include reference="yLm-Io-Y3X"/>
                                 <include reference="vEn-PS-gbD"/>
+                                <include reference="A9M-a1-U65"/>
+                                <include reference="EW3-xB-mTi"/>
+                                <include reference="KoB-km-2gh"/>
+                                <include reference="POX-QV-xDU"/>
                                 <include reference="2zO-ZX-y9n"/>
                                 <include reference="get-pQ-t5D"/>
                                 <include reference="sft-Qg-QBn"/>
                                 <include reference="wdn-le-QeK"/>
+                                <include reference="6qq-Ai-0fC"/>
+                                <include reference="mKh-fk-8G5"/>
+                                <include reference="qp4-l5-yDa"/>
+                                <include reference="yLm-Io-Y3X"/>
+                                <include reference="o2f-jS-30j"/>
+                                <include reference="5Bv-cI-Ryf"/>
+                                <include reference="tVU-ys-UbY"/>
+                                <include reference="eaH-IC-EiY"/>
                                 <include reference="FWJ-Bg-RPq"/>
                                 <include reference="V3n-3S-tgg"/>
                                 <include reference="gNA-jA-lhy"/>
-                                <include reference="o2f-jS-30j"/>
-                                <include reference="eaH-IC-EiY"/>
-                                <include reference="EW3-xB-mTi"/>
-                                <include reference="KoB-km-2gh"/>
-                                <include reference="POX-QV-xDU"/>
-                                <include reference="5Bv-cI-Ryf"/>
-                                <include reference="tVU-ys-UbY"/>
+                                <include reference="ojw-fc-YNe"/>
+                                <include reference="wbJ-62-vNo"/>
                             </mask>
                         </variation>
                     </view>

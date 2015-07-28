@@ -219,7 +219,7 @@
 				TargetAttributes = {
 					B0EECD0B1B5E758200712A84 = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = 9M8RSS5KWQ;
+						DevelopmentTeam = 427LPJP8S9;
 					};
 					B0EECD201B5E758200712A84 = {
 						CreatedOnToolsVersion = 6.4;
@@ -365,7 +365,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "97eba6e0-d939-4c49-9dfb-03c01b11b154";
+				PROVISIONING_PROFILE = "26b5dfff-2fe3-47ba-b7fd-729a7cedc9c7";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -405,7 +405,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "97eba6e0-d939-4c49-9dfb-03c01b11b154";
+				PROVISIONING_PROFILE = "26b5dfff-2fe3-47ba-b7fd-729a7cedc9c7";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -422,7 +422,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "i Ate";
-				PROVISIONING_PROFILE = "97eba6e0-d939-4c49-9dfb-03c01b11b154";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -437,7 +437,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "i Ate";
-				PROVISIONING_PROFILE = "97eba6e0-d939-4c49-9dfb-03c01b11b154";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -445,7 +445,7 @@
 		B0EECD2F1B5E758200712A84 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Feed.app/Feed";
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -459,15 +459,15 @@
 				INFOPLIST_FILE = FeedTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "i AteTests";
-				PROVISIONING_PROFILE = "97eba6e0-d939-4c49-9dfb-03c01b11b154";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Meal Timeline.app/Meal Timeline";
+				PROVISIONING_PROFILE = "";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/i Ate.app/i Ate";
 			};
 			name = Debug;
 		};
 		B0EECD301B5E758200712A84 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Feed.app/Feed";
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -477,8 +477,8 @@
 				INFOPLIST_FILE = FeedTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "i AteTests";
-				PROVISIONING_PROFILE = "97eba6e0-d939-4c49-9dfb-03c01b11b154";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Meal Timeline.app/Meal Timeline";
+				PROVISIONING_PROFILE = "";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/i Ate.app/i Ate";
 			};
 			name = Release;
 		};
