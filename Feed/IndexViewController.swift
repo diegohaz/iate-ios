@@ -48,8 +48,14 @@ class IndexViewController: UIViewController, UIActionSheetDelegate, UIImagePicke
         todayCircle.setNeedsDisplay()
         
         pastDays = MealDB().getEveryMealDates()
+        let calendar = NSCalendar.currentCalendar()
+        let components = calendar.components(.CalendarUnitMonth | .CalendarUnitDay | .CalendarUnitYear, fromDate: NSDate())
         
-        if (pastDays.count > 0) {
+        let day = components.day
+        let month = components.month
+        let year = components.year
+        
+        if (pastDays.count > 0 && pastDays[0].day == day && pastDays[0].month == month && pastDays[0].year == year) {
             pastDays.removeAtIndex(0)
         }
         
