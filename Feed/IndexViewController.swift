@@ -48,7 +48,12 @@ class IndexViewController: UIViewController, UIActionSheetDelegate, UIImagePicke
         todayCircle.setNeedsDisplay()
         
         pastDays = MealDB().getEveryMealDates()
-        pastDays.removeAtIndex(0)
+        
+        if (pastDays.count > 0) {
+            pastDays.removeAtIndex(0)
+        }
+        
+        currentDay = pastDays.count
         
         for day in pastDays {
             let meals = MealDB().getMealsByDate(day)
@@ -241,10 +246,10 @@ class IndexViewController: UIViewController, UIActionSheetDelegate, UIImagePicke
         } else if collectionView.tag == 1 {
             return pastDays.count
         } else {
-            currentDay++
+            currentDay--
             
-            if currentDay >= pastDays.count {
-                currentDay = 0
+            if currentDay < 0 {
+                currentDay = pastDays.count
             }
             
             println(currentDay)
@@ -252,6 +257,12 @@ class IndexViewController: UIViewController, UIActionSheetDelegate, UIImagePicke
             collectionView.tag = currentDay + 2
             
             return pastMeals[currentDay].count
+        }
+    }
+    
+    func collectionView(collectionView: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
+        if collectionView.tag >= 2 {
+            println(collectionView.tag - 2)
         }
     }
     
