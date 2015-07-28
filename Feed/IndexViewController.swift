@@ -101,7 +101,7 @@ class IndexViewController: UIViewController, UIActionSheetDelegate, UIImagePicke
                 
                 imagePicker.delegate = self
                 imagePicker.sourceType =
-                    UIImagePickerControllerSourceType.PhotoLibrary
+                    UIImagePickerControllerSourceType.SavedPhotosAlbum
                 imagePicker.mediaTypes = [kUTTypeImage as NSString]
                 imagePicker.allowsEditing = false
                 self.presentViewController(imagePicker, animated: true,
