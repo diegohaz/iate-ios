@@ -164,7 +164,7 @@
                                 </connections>
                             </collectionView>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ap-gO-qCb">
-                                <rect key="frame" x="16" y="222" width="217.5" height="90"/>
+                                <rect key="frame" x="16" y="222" width="218" height="90"/>
                                 <string key="text">You still don't have meals today
 Take a pic next time you eat</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -205,13 +205,106 @@ Take a pic next time you eat</string>
                         <outlet property="todayCircle" destination="nud-hf-V1I" id="ooA-UZ-OB5"/>
                         <outlet property="todayCircleHeight" destination="LeR-Mz-GX2" id="mDO-29-UE4"/>
                         <outlet property="todayCollectionView" destination="wGn-Ms-GfQ" id="NNf-1w-KBK"/>
-                        <segue destination="U8B-4S-EE2" kind="presentation" identifier="goRate" id="Tr1-cC-Qse"/>
                         <segue destination="8G8-Lq-9SR" kind="show" identifier="showMealDetails" id="JNo-gb-wSa"/>
+                        <segue destination="qAo-yX-rvp" kind="show" identifier="goPickImage" id="2NS-p7-eJe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9FR-jg-KFY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="756" y="1221"/>
+        </scene>
+        <!--Img Picker View Controller-->
+        <scene sceneID="qfG-g2-oKd">
+            <objects>
+                <viewController id="qAo-yX-rvp" customClass="ImgPickerViewController" customModule="i_Ate" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Dyl-ad-E4L"/>
+                        <viewControllerLayoutGuide type="bottom" id="M5x-Ed-1LE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IeC-ry-I7e">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ftk-zd-HIW">
+                                <rect key="frame" x="-10" y="-10" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="Lvd-Bg-EjT"/>
+                                    <constraint firstAttribute="width" constant="75" id="ipr-nm-pVA"/>
+                                </constraints>
+                                <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Lvd-Bg-EjT"/>
+                                        <exclude reference="ipr-nm-pVA"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="Lvd-Bg-EjT"/>
+                                        <include reference="ipr-nm-pVA"/>
+                                    </mask>
+                                </variation>
+                            </activityIndicatorView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Symbol" translatesAutoresizingMaskIntoConstraints="NO" id="0s1-5X-F4g">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="OWz-q5-erW"/>
+                                    <constraint firstAttribute="width" constant="200" id="mM1-a9-fME"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="OWz-q5-erW"/>
+                                        <exclude reference="mM1-a9-fME"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="OWz-q5-erW"/>
+                                        <include reference="mM1-a9-fME"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.93807339449541294" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="0s1-5X-F4g" secondAttribute="centerX" id="7XE-yf-SfK"/>
+                            <constraint firstAttribute="centerX" secondItem="ftk-zd-HIW" secondAttribute="centerX" id="WiG-Ez-tLj"/>
+                            <constraint firstAttribute="centerY" secondItem="ftk-zd-HIW" secondAttribute="centerY" id="cMX-1S-Xy3"/>
+                            <constraint firstAttribute="centerY" secondItem="0s1-5X-F4g" secondAttribute="centerY" id="gxh-O4-zvb"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="ftk-zd-HIW"/>
+                                <exclude reference="0s1-5X-F4g"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="7XE-yf-SfK"/>
+                                <exclude reference="gxh-O4-zvb"/>
+                                <exclude reference="WiG-Ez-tLj"/>
+                                <exclude reference="cMX-1S-Xy3"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="ftk-zd-HIW"/>
+                                <include reference="0s1-5X-F4g"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="7XE-yf-SfK"/>
+                                <include reference="gxh-O4-zvb"/>
+                                <include reference="WiG-Ez-tLj"/>
+                                <include reference="cMX-1S-Xy3"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="ftk-zd-HIW" id="7YO-C9-V10"/>
+                        <segue destination="AJB-mj-p3P" kind="show" identifier="backToIndex" id="b5k-68-F4c"/>
+                        <segue destination="U8B-4S-EE2" kind="show" identifier="goRate" id="SAI-OS-vh8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PRs-oN-Nct" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1719" y="1221"/>
         </scene>
         <!--Rate Image View Controller-->
         <scene sceneID="rjP-Ba-dLQ">
@@ -281,13 +374,6 @@ Take a pic next time you eat</string>
                                     <action selector="doneButtonAct:" destination="U8B-4S-EE2" eventType="touchUpInside" id="vds-DO-aer"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Description (optional)" translatesAutoresizingMaskIntoConstraints="NO" id="WSG-2g-tgW">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ee6-aq-o0C" customClass="DayCircleView" customModule="i_Ate" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
@@ -358,6 +444,13 @@ Take a pic next time you eat</string>
                                     </mask>
                                 </variation>
                             </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Description (optional)" translatesAutoresizingMaskIntoConstraints="NO" id="WSG-2g-tgW">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -415,8 +508,8 @@ Take a pic next time you eat</string>
                                 <exclude reference="Qw5-t6-L5s"/>
                                 <exclude reference="PfN-ga-sr9"/>
                                 <exclude reference="OAT-z9-lQc"/>
-                                <exclude reference="WSG-2g-tgW"/>
                                 <exclude reference="Ee6-aq-o0C"/>
+                                <exclude reference="WSG-2g-tgW"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="UIs-La-ta2"/>
@@ -446,8 +539,8 @@ Take a pic next time you eat</string>
                                 <include reference="Qw5-t6-L5s"/>
                                 <include reference="PfN-ga-sr9"/>
                                 <include reference="OAT-z9-lQc"/>
-                                <include reference="WSG-2g-tgW"/>
                                 <include reference="Ee6-aq-o0C"/>
+                                <include reference="WSG-2g-tgW"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="UIs-La-ta2"/>
@@ -477,12 +570,12 @@ Take a pic next time you eat</string>
                         <outlet property="healthySlider" destination="xYc-iQ-rU2" id="cIi-Ly-Rqm"/>
                         <outlet property="imageView" destination="8Bb-BU-Z0D" id="ePR-Y7-GDg"/>
                         <outlet property="lovelySlider" destination="PfN-ga-sr9" id="fYk-Xv-ENe"/>
-                        <segue destination="AJB-mj-p3P" kind="presentation" identifier="backToIndex" id="IS6-Q0-EGC"/>
+                        <segue destination="AJB-mj-p3P" kind="show" identifier="backToIndex" id="E7J-lg-3Dw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G8m-tG-C9R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1558.5" y="918.75"/>
+            <point key="canvasLocation" x="2541" y="1221"/>
         </scene>
         <!--Meal Details View Controller-->
         <scene sceneID="Nu6-Nu-L6A">
@@ -824,16 +917,17 @@ Take a pic next time you eat</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="elL-fl-yGn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1525.5" y="1608"/>
+            <point key="canvasLocation" x="756" y="2084"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Symbol" width="189" height="189"/>
         <image name="delete" width="25" height="25"/>
         <image name="done" width="25" height="25"/>
         <image name="edit" width="25" height="25"/>
         <image name="plus" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="7Oe-0I-e6q"/>
+        <segue reference="b5k-68-F4c"/>
     </inferredMetricsTieBreakers>
 </document>

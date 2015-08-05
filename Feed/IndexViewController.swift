@@ -10,12 +10,10 @@ import UIKit
 import MobileCoreServices
 import AssetsLibrary
 
-class IndexViewController: UIViewController, UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
+class IndexViewController: UIViewController, UIActionSheetDelegate,  UICollectionViewDataSource, UICollectionViewDelegate {
 
-    var image:UIImage?
-    var imageDate:NSDate?
-    var newMedia:Bool?
     var selectedMeal:Meal?
+    var pickerMode:Int?
     
     @IBOutlet weak var message: UILabel!
     @IBOutlet weak var todayCircle: DayCircleView!
@@ -85,136 +83,24 @@ class IndexViewController: UIViewController, UIActionSheetDelegate, UIImagePicke
     
     @IBAction func plusButtonAct(sender: AnyObject) {
         let actionSheet = UIActionSheet(title: "New Picture", delegate: self, cancelButtonTitle: "Cancel", destructiveButtonTitle: nil, otherButtonTitles: "Take Picture", "Camera Roll")
-            //actionSheet.destructiveButtonIndex = -1
         actionSheet.showInView(self.view)
     }
     
     
     func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
-        if (buttonIndex == 1){
-        self.useCamera()
-        } else if (buttonIndex == 2){
-            self.useCameraRoll()
-        }
+        self.pickerMode = buttonIndex
         
+        self.performSegueWithIdentifier("goPickImage", sender: self)
         
     }
     
-
-    func useCameraRoll(){
-        if UIImagePickerController.isSourceTypeAvailable(
-            UIImagePickerControllerSourceType.SavedPhotosAlbum) {
-                let imagePicker = UIImagePickerController()
-                
-                imagePicker.delegate = self
-                imagePicker.sourceType =
-                    UIImagePickerControllerSourceType.SavedPhotosAlbum
-                imagePicker.mediaTypes = [kUTTypeImage as NSString]
-                imagePicker.allowsEditing = false
-                self.presentViewController(imagePicker, animated: true,
-                    completion: nil)
-                newMedia=false
-        }
-        
-    }
-    
-    func useCamera(){
-        if UIImagePickerController.isSourceTypeAvailable(
-            UIImagePickerControllerSourceType.Camera) {
-                
-                let imagePicker = UIImagePickerController()
-                
-                imagePicker.delegate = self
-                imagePicker.sourceType =
-                    UIImagePickerControllerSourceType.Camera
-                imagePicker.mediaTypes = [kUTTypeImage as NSString]
-                imagePicker.allowsEditing = false
-                
-                self.presentViewController(imagePicker, animated: true,
-                    completion: nil)
-                newMedia = true
-        }
-    }
-    
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
-        
-        let mediaType = info[UIImagePickerControllerMediaType] as! String
-        
-        self.dismissViewControllerAnimated(true, completion: nil)
-        
-        
-        if mediaType == (kUTTypeImage as! String) {
-            let image = info[UIImagePickerControllerOriginalImage]
-                as! UIImage
-            
-            self.image = image
-            
-            if (newMedia == true) { // se usou a camera para tirar a foto
-                
-                UIImageWriteToSavedPhotosAlbum(image, self,
-                    "image:didFinishSavingWithError:contextInfo:", nil)
-                self.imageDate = NSDate() // pega a data atual
-                self.performSegue()
-                
-            } else {
-                //se pegou a foto do camera roll
-                
-                // Começa a parte que recupera a NSDate da imagem selecionada da camera roll
-                let library = ALAssetsLibrary()
-                var url: NSURL = info[UIImagePickerControllerReferenceURL] as! NSURL
-                
-                
-                library.assetForURL(url, resultBlock: { (asset: ALAsset!) in
-                    if asset.valueForProperty(ALAssetPropertyDate) != nil {
-                        let imagecRollDate = (asset.valueForProperty(ALAssetPropertyDate) as! NSDate!)
-                        self.imageDate = imagecRollDate
-                        self.performSegue()
-                    }
-                    },
-                    failureBlock: { (error: NSError!) in
-                        println(error.localizedDescription)
-                })
-                // Termina a parte que recupera a NSDate da imagem selecionada da camera roll
-                
-                
-                
-                println("passou pela recuperação da NSDate da imagem / roll")
-            }
-        }
-        
-        println("Date: \(self.imageDate)")
-        
-    }
-
-
-    
-    func performSegue(){
-        self.performSegueWithIdentifier("goRate", sender: self)
-    }
-    
-    func image(image: UIImage, didFinishSavingWithError error: NSErrorPointer, contextInfo:UnsafePointer<Void>) {
-        
-        if error != nil {
-            let alert = UIAlertController(title: "Save Failed",
-                message: "Failed to save image",
-                preferredStyle: UIAlertControllerStyle.Alert)
-            
-            let cancelAction = UIAlertAction(title: "OK",
-                style: .Cancel, handler: nil)
-            
-            alert.addAction(cancelAction)
-            self.presentViewController(alert, animated: true,
-                completion: nil)
-        }
-    }
     
     
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if (segue.identifier == "goRate"){
-            var svc = segue.destinationViewController as! RateImageViewController
-            svc.imageDate = self.imageDate
-            svc.image = self.image
+        if (segue.identifier == "goPickImage"){
+            var svc = segue.destinationViewController as! ImgPickerViewController
+            svc.pickerMode = self.pickerMode
         }
         
         if (segue.identifier == "showMealDetails"){
